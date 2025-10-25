@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css will be imported after index.css in main.tsx so it is processed after Tailwind */
