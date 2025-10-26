@@ -1,0 +1,8 @@
+2025-10-25 19:46:58:4658 [31merror[39m: [31munhandledRejection: Connection.prototype.close() no longer accepts a callback[39m
+[31mMongooseError: Connection.prototype.close() no longer accepts a callback[39m
+[31m    at NativeConnection.close (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/mongoose/lib/connection.js:1209:11)[39m
+[31m    at Server.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:169:25)[39m
+[31m    at Object.onceWrapper (node:events:621:28)[39m
+[31m    at Server.emit (node:events:519:35)[39m
+[31m    at emitCloseNT (node:net:2418:8)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m
