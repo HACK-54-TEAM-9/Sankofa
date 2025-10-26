@@ -1,6 +1,8 @@
 const express = require('express');
 const { body, query } = require('express-validator');
 const {
+  getHealthInsights,
+  getHealthDataByLocation,
   getHealthData,
   getHealthDataById,
   createHealthData,
@@ -9,11 +11,10 @@ const {
   getHealthDataByRegion,
   getHighRiskAreas,
   getHealthTrends,
-  getCollectionImpactAnalysis,
-  getLocationInsights,
-  getDiseasePatterns,
+  getHealthStats,
+  getDiseaseTrends,
   getEnvironmentalHealth,
-  getPredictiveInsights
+  getPreventiveTips
 } = require('../controllers/healthController');
 const { protect, authorize, optionalAuth } = require('../middleware/auth');
 const { asyncHandler } = require('../middleware/errorHandler');
@@ -48,13 +49,17 @@ const healthDataValidation = [
 ];
 
 // Public routes (with optional auth for enhanced features)
-router.get('/insights', optionalAuth, asyncHandler(getLocationInsights));
+router.get('/insights', optionalAuth, asyncHandler(getHealthInsights));
 router.get('/trends', optionalAuth, asyncHandler(getHealthTrends));
-router.get('/impact-analysis', optionalAuth, asyncHandler(getCollectionImpactAnalysis));
+router.get('/impact-analysis', optionalAuth, (req, res) => {
+  res.status(501).json({ success: false, message: 'Impact analysis not implemented yet' });
+});
 router.get('/high-risk-areas', optionalAuth, asyncHandler(getHighRiskAreas));
-router.get('/disease-patterns', optionalAuth, asyncHandler(getDiseasePatterns));
+router.get('/disease-patterns', optionalAuth, asyncHandler(getDiseaseTrends));
 router.get('/environmental', optionalAuth, asyncHandler(getEnvironmentalHealth));
-router.get('/predictive', optionalAuth, asyncHandler(getPredictiveInsights));
+router.get('/predictive', optionalAuth, (req, res) => {
+  res.status(501).json({ success: false, message: 'Predictive insights not implemented yet' });
+});
 
 // Protected routes
 router.use(protect);

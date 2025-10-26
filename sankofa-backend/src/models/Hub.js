@@ -1,5 +1,210 @@
-const mongoose = require('mongoose');
+const { supabase, supabaseAdmin } = require('../config/supabase');
+const logger = require('../utils/logger');
 
+// Hub model using Supabase
+class Hub {
+  constructor(data) {
+    Object.assign(this, data);
+  }
+
+  // Create new hub
+  static async create(hubData) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('hubs')
+        .insert([hubData])
+        .select()
+        .single();
+
+      if (error) throw error;
+      return new Hub(data);
+    } catch (error) {
+      logger.error('Error creating hub:', error);
+      throw error;
+    }
+  }
+
+  // Find hub by ID
+  static async findById(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('hubs')
+        .select('*, manager:users!manager_id(id, name, email, phone)')
+        .eq('id', id)
+        .single();
+
+      if (error) throw error;
+      return data ? new Hub(data) : null;
+    } catch (error) {
+      logger.error('Error finding hub:', error);
+      return null;
+    }
+  }
+
+  // Find all hubs with filters
+  static async find(filter = {}, options = {}) {
+    try {
+      let query = supabaseAdmin
+        .from('hubs')
+        .select('*, manager:users!manager_id(id, name, email, phone)', { count: 'exact' });
+
+      // Apply filters
+      if (filter.status) query = query.eq('status', filter.status);
+      if (filter.manager_id) query = query.eq('manager_id', filter.manager_id);
+      if (filter.code) query = query.eq('code', filter.code);
+
+      // Apply sorting
+      const sortField = options.sort || 'created_at';
+      const sortOrder = options.order || 'desc';
+      query = query.order(sortField, { ascending: sortOrder === 'asc' });
+
+      // Apply pagination
+      if (options.limit) query = query.limit(options.limit);
+      if (options.offset) query = query.range(options.offset, options.offset + (options.limit || 10) - 1);
+
+      const { data, error, count } = await query;
+
+      if (error) throw error;
+      return {
+        hubs: data.map(item => new Hub(item)),
+        total: count
+      };
+    } catch (error) {
+      logger.error('Error finding hubs:', error);
+      throw error;
+    }
+  }
+
+  // Update hub
+  static async findByIdAndUpdate(id, updateData) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('hubs')
+        .update({ ...updateData, updated_at: new Date().toISOString() })
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new Hub(data) : null;
+    } catch (error) {
+      logger.error('Error updating hub:', error);
+      throw error;
+    }
+  }
+
+  // Delete hub
+  static async findByIdAndDelete(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('hubs')
+        .delete()
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new Hub(data) : null;
+    } catch (error) {
+      logger.error('Error deleting hub:', error);
+      throw error;
+    }
+  }
+
+  // Find one hub
+  static async findOne(filter) {
+    try {
+      let query = supabaseAdmin
+        .from('hubs')
+        .select('*');
+
+      Object.keys(filter).forEach(key => {
+        query = query.eq(key, filter[key]);
+      });
+
+      const { data, error } = await query.single();
+
+      if (error) throw error;
+      return data ? new Hub(data) : null;
+    } catch (error) {
+      logger.error('Error finding hub:', error);
+      return null;
+    }
+  }
+
+  // Get hub statistics
+  static async getStats() {
+    try {
+      const { data: hubs, error } = await supabaseAdmin
+        .from('hubs')
+        .select('*');
+
+      if (error) throw error;
+
+      const stats = {
+        totalHubs: hubs.length,
+        activeHubs: hubs.filter(h => h.status === 'active').length,
+        inactiveHubs: hubs.filter(h => h.status === 'inactive').length,
+        maintenanceHubs: hubs.filter(h => h.status === 'maintenance').length,
+        byRegion: hubs.reduce((acc, hub) => {
+          const region = hub.location?.address?.region || 'Unknown';
+          acc[region] = (acc[region] || 0) + 1;
+          return acc;
+        }, {})
+      };
+
+      return stats;
+    } catch (error) {
+      logger.error('Error getting hub stats:', error);
+      throw error;
+    }
+  }
+
+  // Find hubs near location
+  static async findNearby(longitude, latitude, radiusKm = 10) {
+    try {
+      // Note: This would require PostGIS for proper geospatial queries
+      // For now, we'll fetch all hubs and filter in memory
+      const { data: hubs, error } = await supabaseAdmin
+        .from('hubs')
+        .select('*')
+        .eq('status', 'active');
+
+      if (error) throw error;
+
+      // Simple distance calculation (Haversine formula)
+      const filtered = hubs.filter(hub => {
+        const coords = hub.location?.coordinates || [];
+        if (coords.length !== 2) return false;
+        
+        const [hubLng, hubLat] = coords;
+        const R = 6371; // Earth's radius in km
+        const dLat = (hubLat - latitude) * Math.PI / 180;
+        const dLon = (hubLng - longitude) * Math.PI / 180;
+        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                  Math.cos(latitude * Math.PI / 180) * Math.cos(hubLat * Math.PI / 180) *
+                  Math.sin(dLon/2) * Math.sin(dLon/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        const distance = R * c;
+        
+        return distance <= radiusKm;
+      });
+
+      return filtered.map(hub => new Hub(hub));
+    } catch (error) {
+      logger.error('Error finding nearby hubs:', error);
+      throw error;
+    }
+  }
+
+  // Instance method to convert to JSON
+  toJSON() {
+    return { ...this };
+  }
+}
+
+// Old Mongoose schema kept for reference (commented out)
+/*
 const hubSchema = new mongoose.Schema({
   // Basic Information
   name: {
@@ -415,5 +620,7 @@ hubSchema.statics.getTopPerformingHubs = function(limit = 10) {
     .populate('manager', 'name email')
     .select('name code location performance manager');
 };
+*/
 
-module.exports = mongoose.model('Hub', hubSchema);
+module.exports = Hub;
+

@@ -1,5 +1,223 @@
-const mongoose = require('mongoose');
+const { supabase, supabaseAdmin } = require('../config/supabase');
+const logger = require('../utils/logger');
 
+// Collection model using Supabase
+class Collection {
+  constructor(data) {
+    Object.assign(this, data);
+  }
+
+  // Create new collection
+  static async create(collectionData) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('collections')
+        .insert([collectionData])
+        .select()
+        .single();
+
+      if (error) throw error;
+      return new Collection(data);
+    } catch (error) {
+      logger.error('Error creating collection:', error);
+      throw error;
+    }
+  }
+
+  // Find collection by ID
+  static async findById(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('collections')
+        .select('*, collector:users!collector_id(id, name, email), hub:hubs(id, name, location)')
+        .eq('id', id)
+        .single();
+
+      if (error) throw error;
+      return data ? new Collection(data) : null;
+    } catch (error) {
+      logger.error('Error finding collection:', error);
+      return null;
+    }
+  }
+
+  // Find all collections with filters
+  static async find(filter = {}, options = {}) {
+    try {
+      let query = supabaseAdmin
+        .from('collections')
+        .select('*, collector:users!collector_id(id, name, email), hub:hubs(id, name, location)', { count: 'exact' });
+
+      // Apply filters
+      if (filter.collector_id) query = query.eq('collector_id', filter.collector_id);
+      if (filter.hub_id) query = query.eq('hub_id', filter.hub_id);
+      if (filter.status) query = query.eq('status', filter.status);
+      if (filter.plastic_type) query = query.eq('plastic_type', filter.plastic_type);
+
+      // Apply sorting
+      const sortField = options.sort || 'created_at';
+      const sortOrder = options.order || 'desc';
+      query = query.order(sortField, { ascending: sortOrder === 'asc' });
+
+      // Apply pagination
+      if (options.limit) query = query.limit(options.limit);
+      if (options.offset) query = query.range(options.offset, options.offset + (options.limit || 10) - 1);
+
+      const { data, error, count } = await query;
+
+      if (error) throw error;
+      return { 
+        collections: data.map(item => new Collection(item)),
+        total: count
+      };
+    } catch (error) {
+      logger.error('Error finding collections:', error);
+      throw error;
+    }
+  }
+
+  // Update collection
+  static async findByIdAndUpdate(id, updateData) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('collections')
+        .update({ ...updateData, updated_at: new Date().toISOString() })
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new Collection(data) : null;
+    } catch (error) {
+      logger.error('Error updating collection:', error);
+      throw error;
+    }
+  }
+
+  // Delete collection
+  static async findByIdAndDelete(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('collections')
+        .delete()
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new Collection(data) : null;
+    } catch (error) {
+      logger.error('Error deleting collection:', error);
+      throw error;
+    }
+  }
+
+  // Verify collection
+  static async verifyCollection(id, verifiedBy, notes) {
+    try {
+      const { data, error} = await supabaseAdmin
+        .from('collections')
+        .update({
+          status: 'verified',
+          verified_by: verifiedBy,
+          verification_notes: notes,
+          verification_date: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new Collection(data) : null;
+    } catch (error) {
+      logger.error('Error verifying collection:', error);
+      throw error;
+    }
+  }
+
+  // Get collection statistics
+  static async getStats(filter = {}) {
+    try {
+      let query = supabaseAdmin
+        .from('collections')
+        .select('*');
+
+      if (filter.collector_id) query = query.eq('collector_id', filter.collector_id);
+      if (filter.hub_id) query = query.eq('hub_id', filter.hub_id);
+      if (filter.status) query = query.eq('status', filter.status);
+
+      const { data, error } = await query;
+
+      if (error) throw error;
+
+      const stats = {
+        totalCollections: data.length,
+        totalWeight: data.reduce((sum, col) => sum + parseFloat(col.weight || 0), 0),
+        totalAmount: data.reduce((sum, col) => sum + parseFloat(col.total_amount || 0), 0),
+        cashAmount: data.reduce((sum, col) => sum + parseFloat(col.cash_amount || 0), 0),
+        healthTokenAmount: data.reduce((sum, col) => sum + parseFloat(col.health_token_amount || 0), 0),
+        byStatus: data.reduce((acc, col) => {
+          acc[col.status] = (acc[col.status] || 0) + 1;
+          return acc;
+        }, {}),
+        byPlasticType: data.reduce((acc, col) => {
+          acc[col.plastic_type] = (acc[col.plastic_type] || 0) + 1;
+          return acc;
+        }, {})
+      };
+
+      return stats;
+    } catch (error) {
+      logger.error('Error getting collection stats:', error);
+      throw error;
+    }
+  }
+
+  // Get top collectors
+  static async getTopCollectors(limit = 10) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('collections')
+        .select('collector_id, users!collector_id(id, name, email), weight, total_amount')
+        .eq('status', 'verified');
+
+      if (error) throw error;
+
+      // Aggregate by collector
+      const collectorMap = {};
+      data.forEach(col => {
+        const collectorId = col.collector_id;
+        if (!collectorMap[collectorId]) {
+          collectorMap[collectorId] = {
+            collector: col.users,
+            totalWeight: 0,
+            totalAmount: 0,
+            count: 0
+          };
+        }
+        collectorMap[collectorId].totalWeight += parseFloat(col.weight || 0);
+        collectorMap[collectorId].totalAmount += parseFloat(col.total_amount || 0);
+        collectorMap[collectorId].count += 1;
+      });
+
+      return Object.values(collectorMap)
+        .sort((a, b) => b.totalWeight - a.totalWeight)
+        .slice(0, limit);
+    } catch (error) {
+      logger.error('Error getting top collectors:', error);
+      throw error;
+    }
+  }
+
+  // Instance method to convert to JSON
+  toJSON() {
+    return { ...this };
+  }
+}
+
+// Old Mongoose schema kept for reference (commented out)
+/*
 const collectionSchema = new mongoose.Schema({
   // Collection Details
   collector: {
@@ -350,5 +568,7 @@ collectionSchema.statics.getTopCollectors = function(limit = 10, dateRange = nul
   
   return this.aggregate(pipeline);
 };
+*/
 
-module.exports = mongoose.model('Collection', collectionSchema);
+module.exports = Collection;
+

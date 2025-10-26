@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const { supabase, supabaseAdmin } = require('../config/supabase');
 const logger = require('../utils/logger');
 
-// Protect routes - verify JWT token
+// Protect routes - verify Supabase access token and attach user
 const protect = async (req, res, next) => {
   try {
     let token;
@@ -21,12 +21,19 @@ const protect = async (req, res, next) => {
     }
 
     try {
-      // Verify token
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      
-      // Get user from token
-      const user = await User.findById(decoded.id).select('-password');
-      
+      const client = supabaseAdmin || supabase;
+
+      // Verify token via Supabase
+      const { data, error } = await client.auth.getUser(token);
+
+      if (error || !data || !data.user) {
+        logger.warn('Supabase token verification failed', error && error.message);
+        return res.status(401).json({ success: false, message: 'Invalid token.' });
+      }
+
+      // Lookup application user by auth user id
+      const user = await User.findById(data.user.id);
+
       if (!user) {
         return res.status(401).json({
           success: false,
@@ -42,22 +49,24 @@ const protect = async (req, res, next) => {
         });
       }
 
-      // Update last login
-      user.lastLogin = new Date();
-      user.loginCount += 1;
-      await user.save();
+      // Update last login (non-blocking)
+      try {
+        await user.updateLastLogin();
+      } catch (err) {
+        logger.warn('Failed to update last login:', err.message);
+      }
 
       req.user = user;
       next();
     } catch (error) {
-      logger.error('Token verification error:', error);
+      logger.error('Token verification error:', error.message || error);
       return res.status(401).json({
         success: false,
         message: 'Invalid token.'
       });
     }
   } catch (error) {
-    logger.error('Auth middleware error:', error);
+    logger.error('Auth middleware error:', error.message || error);
     return res.status(500).json({
       success: false,
       message: 'Server error during authentication.'
@@ -97,21 +106,24 @@ const optionalAuth = async (req, res, next) => {
 
     if (token) {
       try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const user = await User.findById(decoded.id).select('-password');
-        
-        if (user && user.status === 'active') {
-          req.user = user;
+        const client = supabaseAdmin || supabase;
+        const { data, error } = await client.auth.getUser(token);
+
+        if (data && data.user) {
+          const user = await User.findById(data.user.id);
+          if (user && user.status === 'active') {
+            req.user = user;
+          }
         }
       } catch (error) {
         // Token is invalid, but we continue without user
-        logger.warn('Invalid token in optional auth:', error.message);
+        logger.warn('Invalid token in optional auth:', error.message || error);
       }
     }
 
     next();
   } catch (error) {
-    logger.error('Optional auth middleware error:', error);
+    logger.error('Optional auth middleware error:', error.message || error);
     next(); // Continue even if there's an error
   }
 };
@@ -134,7 +146,7 @@ const checkOwnership = (resourceUserIdField = 'user') => {
     // Check if user owns the resource
     const resourceUserId = req.resource ? req.resource[resourceUserIdField] : req.params.userId;
     
-    if (req.user._id.toString() !== resourceUserId.toString()) {
+    if (req.user.id.toString() !== resourceUserId.toString()) {
       return res.status(403).json({
         success: false,
         message: 'Access denied. You can only access your own resources.'
@@ -154,7 +166,7 @@ const userRateLimit = (maxRequests = 10, windowMs = 15 * 60 * 1000) => {
       return next();
     }
 
-    const userId = req.user._id.toString();
+    const userId = req.user.id.toString();
     const now = Date.now();
     const windowStart = now - windowMs;
 
@@ -193,18 +205,22 @@ const verifyEmailToken = async (req, res, next) => {
       });
     }
 
-    const user = await User.findOne({
-      emailVerificationToken: token
-    });
+    // Lookup user by email verification token in Supabase
+    const client = supabaseAdmin || supabase;
+    const { data, error } = await client
+      .from('users')
+      .select('*')
+      .eq('emailVerificationToken', token)
+      .single();
 
-    if (!user) {
+    if (error || !data) {
       return res.status(400).json({
         success: false,
         message: 'Invalid or expired email verification token.'
       });
     }
 
-    req.user = user;
+    req.user = data;
     next();
   } catch (error) {
     logger.error('Email verification error:', error);
@@ -227,19 +243,30 @@ const verifyPasswordResetToken = async (req, res, next) => {
       });
     }
 
-    const user = await User.findOne({
-      passwordResetToken: token,
-      passwordResetExpires: { $gt: Date.now() }
-    });
+    // Lookup user by password reset token and ensure not expired
+    const client = supabaseAdmin || supabase;
+    const { data, error } = await client
+      .from('users')
+      .select('*')
+      .eq('passwordResetToken', token)
+      .single();
 
-    if (!user) {
+    if (error || !data) {
       return res.status(400).json({
         success: false,
         message: 'Invalid or expired password reset token.'
       });
     }
 
-    req.user = user;
+    // Check expiration if field exists
+    if (data.passwordResetExpires && new Date(data.passwordResetExpires) <= new Date()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid or expired password reset token.'
+      });
+    }
+
+    req.user = data;
     next();
   } catch (error) {
     logger.error('Password reset verification error:', error);
@@ -290,42 +317,12 @@ const requirePhoneVerification = (req, res, next) => {
 
 // Generate new access token using refresh token
 const refreshToken = async (req, res, next) => {
-  try {
-    const { refreshToken } = req.body;
-
-    if (!refreshToken) {
-      return res.status(400).json({
-        success: false,
-        message: 'Refresh token is required.'
-      });
-    }
-
-    const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
-    const user = await User.findById(decoded.id).select('-password');
-
-    if (!user || user.status !== 'active') {
-      return res.status(401).json({
-        success: false,
-        message: 'Invalid refresh token.'
-      });
-    }
-
-    const newAccessToken = user.generateAuthToken();
-    const newRefreshToken = user.generateRefreshToken();
-
-    req.newTokens = {
-      accessToken: newAccessToken,
-      refreshToken: newRefreshToken
-    };
-
-    next();
-  } catch (error) {
-    logger.error('Refresh token error:', error);
-    return res.status(401).json({
-      success: false,
-      message: 'Invalid refresh token.'
-    });
-  }
+  // Supabase manages refresh tokens via its auth client. Server-side refresh handling
+  // is not implemented here. Clients should use the Supabase client to refresh sessions.
+  return res.status(501).json({
+    success: false,
+    message: 'Refresh token rotation is handled by Supabase. Please use client-side refresh or implement server-side via Supabase admin APIs.'
+  });
 };
 
 module.exports = {

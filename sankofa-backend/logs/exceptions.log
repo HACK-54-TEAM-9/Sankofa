@@ -432,3 +432,199 @@
 [31m    at listenInCluster (node:net:1996:12)[39m
 [31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
 [31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 06:15:11:1511 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31m/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50[39m
+[31m        throw new Error('supabaseUrl is required.');[39m
+[31m        ^[39m
+
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-26 06:32:09:329 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 06:35:42:3542 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:38:00:380 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:38:48:3848 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:41:25:4125 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:54:08:548 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:55:08:558 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:55:31:5531 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:55:39:5539 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:56:37:5637 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:56:51:5651 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:57:16:5716 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:59:03:593 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:59:37:5937 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 07:00:02:02 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 07:02:16:216 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m

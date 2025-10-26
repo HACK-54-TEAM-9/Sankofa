@@ -1,3 +1,6 @@
+// Load environment variables FIRST before any other modules
+require('dotenv').config();
+
 const express = require('express');
 // const mongoose = require('mongoose'); // Commented out - using Supabase instead
 const cors = require('cors');
@@ -8,7 +11,6 @@ const rateLimit = require('express-rate-limit');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
 require('express-async-errors');
-require('dotenv').config();
 
 // Import routes
 const authRoutes = require('./routes/auth');

@@ -1,4 +1,7 @@
+const bcrypt = require('bcryptjs');
 const User = require('../models/User');
+const SupabaseUser = require('../models/SupabaseUser');
+const redisService = require('../services/redisService');
 const { AppError, asyncHandler } = require('../middleware/errorHandler');
 const logger = require('../utils/logger');
 
@@ -87,11 +90,15 @@ const deleteUser = asyncHandler(async (req, res) => {
 // @route   GET /api/users/profile
 // @access  Private
 const getUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user.id).select('-password');
+  const user = await User.findById(req.user.id);
+
+  if (!user) {
+    throw new AppError('User not found', 404);
+  }
 
   res.json({
     success: true,
-    data: { user }
+    data: { user: user.toJSON() }
   });
 });
 
@@ -99,16 +106,18 @@ const getUserProfile = asyncHandler(async (req, res) => {
 // @route   PUT /api/users/profile
 // @access  Private
 const updateUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findByIdAndUpdate(
-    req.user.id,
-    req.body,
-    { new: true, runValidators: true }
-  ).select('-password');
+  const user = await User.findById(req.user.id);
+
+  if (!user) {
+    throw new AppError('User not found', 404);
+  }
+
+  await user.update(req.body);
 
   res.json({
     success: true,
     message: 'Profile updated successfully',
-    data: { user }
+    data: { user: user.toJSON() }
   });
 });
 
@@ -118,16 +127,26 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 const changePassword = asyncHandler(async (req, res) => {
   const { currentPassword, newPassword } = req.body;
 
-  const user = await User.findById(req.user.id).select('+password');
+  // Use SupabaseUser helper for direct password checks and updates
+  const userRecord = await SupabaseUser.findById(req.user.id);
 
-  // Check current password
-  const isMatch = await user.matchPassword(currentPassword);
+  if (!userRecord) {
+    throw new AppError('User not found', 404);
+  }
+
+  // Verify current password
+  const isMatch = await bcrypt.compare(currentPassword, userRecord.password);
   if (!isMatch) {
     throw new AppError('Current password is incorrect', 400);
   }
 
-  user.password = newPassword;
-  await user.save();
+  // Hash new password
+  const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_ROUNDS) || 12);
+  const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+  await SupabaseUser.update(req.user.id, {
+    password: hashedPassword
+  });
 
   res.json({
     success: true,
@@ -139,8 +158,9 @@ const changePassword = asyncHandler(async (req, res) => {
 // @route   GET /api/users/stats
 // @access  Private (Admin)
 const getUserStats = asyncHandler(async (req, res) => {
-  const stats = await User.getUserStats();
-  
+  // Model exposes getStats()
+  const stats = await User.getStats();
+
   res.json({
     success: true,
     data: { stats }
@@ -151,13 +171,13 @@ const getUserStats = asyncHandler(async (req, res) => {
 // @route   GET /api/users/top
 // @access  Private
 const getTopUsers = asyncHandler(async (req, res) => {
-  const { limit = 10, metric = 'collections' } = req.query;
+  const { limit = 10 } = req.query;
   
-  const topUsers = await User.getTopUsers(parseInt(limit), metric);
+  const topUsers = await User.getTopUsers(parseInt(limit));
   
   res.json({
     success: true,
-    data: { topUsers }
+    data: { topUsers: topUsers.map(u => u.toPublicProfile()) }
   });
 });
 
@@ -166,9 +186,10 @@ const getTopUsers = asyncHandler(async (req, res) => {
 // @access  Private
 const getUserActivity = asyncHandler(async (req, res) => {
   const { page = 1, limit = 20 } = req.query;
-  
-  const activities = await User.getUserActivity(req.user.id, parseInt(page), parseInt(limit));
-  
+
+  // Activity is stored in Redis (if available)
+  const activities = await redisService.getUserActivity(req.user.id, parseInt(limit));
+
   res.json({
     success: true,
     data: { activities }

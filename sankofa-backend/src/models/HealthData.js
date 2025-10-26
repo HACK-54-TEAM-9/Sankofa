@@ -1,414 +1,277 @@
-const mongoose = require('mongoose');
+const { supabase, supabaseAdmin } = require('../config/supabase');
+const logger = require('../utils/logger');
 
-const healthDataSchema = new mongoose.Schema({
-  // Location Information
-  location: {
-    type: {
-      type: String,
-      enum: ['Point', 'Polygon'],
-      default: 'Point'
-    },
-    coordinates: {
-      type: [Number], // [longitude, latitude]
-      required: [true, 'Location coordinates are required']
-    },
-    address: {
-      region: String,
-      district: String,
-      city: String,
-      neighborhood: String
-    }
-  },
-  
-  // Data Source
-  source: {
-    type: String,
-    enum: ['collection_data', 'health_records', 'environmental_monitoring', 'ai_prediction', 'manual_entry'],
-    required: [true, 'Data source is required']
-  },
-  
-  // Health Metrics
-  healthMetrics: {
-    // Disease Data
-    diseases: [{
-      name: {
-        type: String,
-        required: true
-      },
-      cases: {
-        type: Number,
-        required: true,
-        min: 0
-      },
-      trend: {
-        type: String,
-        enum: ['increasing', 'decreasing', 'stable'],
-        default: 'stable'
-      },
-      severity: {
-        type: String,
-        enum: ['low', 'medium', 'high', 'critical'],
-        default: 'low'
-      },
-      lastUpdated: {
-        type: Date,
-        default: Date.now
-      }
-    }],
-    
-    // Environmental Health Indicators
-    environmentalHealth: {
-      airQuality: {
-        type: String,
-        enum: ['excellent', 'good', 'moderate', 'poor', 'hazardous'],
-        default: 'moderate'
-      },
-      waterQuality: {
-        type: String,
-        enum: ['excellent', 'good', 'moderate', 'poor', 'hazardous'],
-        default: 'moderate'
-      },
-      plasticPollutionLevel: {
-        type: String,
-        enum: ['low', 'moderate', 'high', 'critical'],
-        default: 'moderate'
-      },
-      vectorBreedingSites: {
-        type: Number,
-        default: 0
-      }
-    },
-    
-    // Risk Assessment
-    riskAssessment: {
-      overallRisk: {
-        type: String,
-        enum: ['low', 'medium', 'high', 'critical'],
-        required: true
-      },
-      riskScore: {
-        type: Number,
-        min: 0,
-        max: 100,
-        required: true
-      },
-      riskFactors: [String],
-      mitigationPriority: {
-        type: String,
-        enum: ['low', 'medium', 'high', 'urgent'],
-        default: 'medium'
-      }
-    }
-  },
-  
-  // Collection Impact Analysis
-  collectionImpact: {
-    totalPlasticCollected: {
-      type: Number,
-      default: 0
-    },
-    collectionFrequency: {
-      type: Number,
-      default: 0
-    },
-    diseaseReductionRate: {
-      type: Number,
-      min: 0,
-      max: 100,
-      default: 0
-    },
-    communityEngagementRate: {
-      type: Number,
-      min: 0,
-      max: 100,
-      default: 0
-    },
-    lastCollectionDate: Date
-  },
-  
-  // Predictive Analytics
-  predictions: {
-    diseaseOutbreakRisk: {
-      type: Number,
-      min: 0,
-      max: 100
-    },
-    seasonalTrends: [{
-      season: String,
-      riskLevel: String,
-      predictedCases: Number
-    }],
-    interventionEffectiveness: {
-      type: Number,
-      min: 0,
-      max: 100
-    }
-  },
-  
-  // AI Analysis
-  aiAnalysis: {
-    modelVersion: String,
-    confidence: {
-      type: Number,
-      min: 0,
-      max: 100
-    },
-    lastAnalyzed: Date,
-    insights: [String],
-    recommendations: [String]
-  },
-  
-  // Data Quality
-  dataQuality: {
-    completeness: {
-      type: Number,
-      min: 0,
-      max: 100
-    },
-    accuracy: {
-      type: Number,
-      min: 0,
-      max: 100
-    },
-    timeliness: {
-      type: Number,
-      min: 0,
-      max: 100
-    },
-    lastValidated: Date
-  },
-  
-  // Metadata
-  metadata: {
-    dataProvider: String,
-    collectionMethod: String,
-    samplingSize: Number,
-    confidenceInterval: Number,
-    notes: String
-  },
-  
-  // Status
-  status: {
-    type: String,
-    enum: ['active', 'archived', 'pending_validation', 'flagged'],
-    default: 'active'
-  },
-  
-  // Audit Fields
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  updatedBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+// HealthData model using Supabase
+class HealthData {
+  constructor(data) {
+    Object.assign(this, data);
   }
-}, {
-  timestamps: true,
-  toJSON: { virtuals: true },
-  toObject: { virtuals: true }
-});
 
-// Indexes
-healthDataSchema.index({ 'location.coordinates': '2dsphere' });
-healthDataSchema.index({ 'location.address.region': 1 });
-healthDataSchema.index({ 'location.address.district': 1 });
-healthDataSchema.index({ 'healthMetrics.riskAssessment.overallRisk': 1 });
-healthDataSchema.index({ source: 1 });
-healthDataSchema.index({ status: 1 });
-healthDataSchema.index({ createdAt: -1 });
-healthDataSchema.index({ 'healthMetrics.diseases.name': 1 });
+  // Create new health data
+  static async create(healthData) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .insert([healthData])
+        .select()
+        .single();
 
-// Virtual for risk level color
-healthDataSchema.virtual('riskColor').get(function() {
-  const risk = this.healthMetrics.riskAssessment.overallRisk;
-  const colors = {
-    low: 'green',
-    medium: 'yellow',
-    high: 'orange',
-    critical: 'red'
-  };
-  return colors[risk] || 'gray';
-});
+      if (error) throw error;
+      return new HealthData(data);
+    } catch (error) {
+      logger.error('Error creating health data:', error);
+      throw error;
+    }
+  }
 
-// Virtual for data age
-healthDataSchema.virtual('dataAge').get(function() {
-  return Math.floor((Date.now() - this.createdAt) / (1000 * 60 * 60 * 24)); // days
-});
+  // Find health data by ID
+  static async findById(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .select('*')
+        .eq('id', id)
+        .single();
 
-// Pre-save middleware to calculate risk score
-healthDataSchema.pre('save', function(next) {
-  if (this.isModified('healthMetrics')) {
-    let riskScore = 0;
-    
-    // Calculate risk based on disease cases and trends
-    this.healthMetrics.diseases.forEach(disease => {
-      let diseaseRisk = 0;
+      if (error) throw error;
+      return data ? new HealthData(data) : null;
+    } catch (error) {
+      logger.error('Error finding health data:', error);
+      return null;
+    }
+  }
+
+  // Find all health data with filters
+  static async find(filter = {}, options = {}) {
+    try {
+      let query = supabaseAdmin
+        .from('health_data')
+        .select('*', { count: 'exact' });
+
+      // Apply filters
+      if (filter.source) query = query.eq('source', filter.source);
+      if (filter.status) query = query.eq('status', filter.status);
+
+      // Apply sorting
+      const sortField = options.sort || 'created_at';
+      const sortOrder = options.order || 'desc';
+      query = query.order(sortField, { ascending: sortOrder === 'asc' });
+
+      // Apply pagination
+      if (options.limit) query = query.limit(options.limit);
+
+      const { data, error, count } = await query;
+
+      if (error) throw error;
+      return data.map(item => new HealthData(item));
+    } catch (error) {
+      logger.error('Error finding health data:', error);
+      throw error;
+    }
+  }
+
+  // Find one health data record
+  static async findOne(filter) {
+    try {
+      let query = supabaseAdmin
+        .from('health_data')
+        .select('*');
+
+      Object.keys(filter).forEach(key => {
+        query = query.eq(key, filter[key]);
+      });
+
+      const { data, error } = await query.single();
+
+      if (error) {
+        if (error.code === 'PGRST116') return null; // Not found
+        throw error;
+      }
+      return data ? new HealthData(data) : null;
+    } catch (error) {
+      logger.error('Error finding health data:', error);
+      return null;
+    }
+  }
+
+  // Update health data
+  static async findByIdAndUpdate(id, updateData, options = {}) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .update({ ...updateData, updated_at: new Date().toISOString() })
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new HealthData(data) : null;
+    } catch (error) {
+      logger.error('Error updating health data:', error);
+      throw error;
+    }
+  }
+
+  // Delete health data
+  static async findByIdAndDelete(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .delete()
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new HealthData(data) : null;
+    } catch (error) {
+      logger.error('Error deleting health data:', error);
+      throw error;
+    }
+  }
+
+  // Get health trends - simplified version
+  static async getHealthTrends(region, timeRange = '30d') {
+    try {
+      let query = supabaseAdmin
+        .from('health_data')
+        .select('*')
+        .eq('status', 'active');
+
+      if (region) {
+        query = query.contains('location', { address: { region } });
+      }
+
+      const { data, error } = await query;
+
+      if (error) throw error;
       
-      // Base risk from cases
-      if (disease.cases > 100) diseaseRisk += 30;
-      else if (disease.cases > 50) diseaseRisk += 20;
-      else if (disease.cases > 20) diseaseRisk += 10;
-      
-      // Trend multiplier
-      if (disease.trend === 'increasing') diseaseRisk *= 1.5;
-      else if (disease.trend === 'decreasing') diseaseRisk *= 0.7;
-      
-      // Severity multiplier
-      const severityMultipliers = { low: 1, medium: 1.2, high: 1.5, critical: 2 };
-      diseaseRisk *= severityMultipliers[disease.severity] || 1;
-      
-      riskScore += diseaseRisk;
-    });
-    
-    // Environmental factors
-    const envHealth = this.healthMetrics.environmentalHealth;
-    if (envHealth.airQuality === 'poor' || envHealth.airQuality === 'hazardous') riskScore += 20;
-    if (envHealth.waterQuality === 'poor' || envHealth.waterQuality === 'hazardous') riskScore += 20;
-    if (envHealth.plasticPollutionLevel === 'high' || envHealth.plasticPollutionLevel === 'critical') riskScore += 15;
-    if (envHealth.vectorBreedingSites > 5) riskScore += 10;
-    
-    // Collection impact (negative correlation)
-    const collectionImpact = this.collectionImpact;
-    if (collectionImpact.diseaseReductionRate > 50) riskScore -= 20;
-    if (collectionImpact.communityEngagementRate > 70) riskScore -= 15;
-    
-    // Normalize to 0-100
-    riskScore = Math.max(0, Math.min(100, riskScore));
-    this.healthMetrics.riskAssessment.riskScore = Math.round(riskScore);
-    
-    // Set overall risk level
-    if (riskScore >= 80) this.healthMetrics.riskAssessment.overallRisk = 'critical';
-    else if (riskScore >= 60) this.healthMetrics.riskAssessment.overallRisk = 'high';
-    else if (riskScore >= 40) this.healthMetrics.riskAssessment.overallRisk = 'medium';
-    else this.healthMetrics.riskAssessment.overallRisk = 'low';
-  }
-  next();
-});
-
-// Instance method to update disease data
-healthDataSchema.methods.updateDiseaseData = function(diseaseName, cases, trend, severity) {
-  const existingDisease = this.healthMetrics.diseases.find(d => d.name === diseaseName);
-  
-  if (existingDisease) {
-    existingDisease.cases = cases;
-    existingDisease.trend = trend;
-    existingDisease.severity = severity;
-    existingDisease.lastUpdated = new Date();
-  } else {
-    this.healthMetrics.diseases.push({
-      name: diseaseName,
-      cases,
-      trend,
-      severity,
-      lastUpdated: new Date()
-    });
-  }
-  
-  return this.save();
-};
-
-// Instance method to generate insights
-healthDataSchema.methods.generateInsights = function() {
-  const insights = [];
-  const risk = this.healthMetrics.riskAssessment;
-  const diseases = this.healthMetrics.diseases;
-  const env = this.healthMetrics.environmentalHealth;
-  
-  // Risk-based insights
-  if (risk.overallRisk === 'critical' || risk.overallRisk === 'high') {
-    insights.push(`High health risk detected in ${this.location.address.region || 'this area'}. Immediate intervention recommended.`);
-  }
-  
-  // Disease insights
-  const increasingDiseases = diseases.filter(d => d.trend === 'increasing');
-  if (increasingDiseases.length > 0) {
-    insights.push(`Increasing trend detected for: ${increasingDiseases.map(d => d.name).join(', ')}`);
-  }
-  
-  // Environmental insights
-  if (env.plasticPollutionLevel === 'high' || env.plasticPollutionLevel === 'critical') {
-    insights.push('High plastic pollution levels detected. Increased collection efforts recommended.');
-  }
-  
-  // Collection impact insights
-  if (this.collectionImpact.diseaseReductionRate > 30) {
-    insights.push(`Plastic collection efforts are showing positive health impact (${this.collectionImpact.diseaseReductionRate}% reduction).`);
-  }
-  
-  this.aiAnalysis.insights = insights;
-  return insights;
-};
-
-// Static method to get health data by region
-healthDataSchema.statics.getHealthDataByRegion = function(region) {
-  return this.find({
-    'location.address.region': region,
-    status: 'active'
-  }).sort({ createdAt: -1 });
-};
-
-// Static method to get high-risk areas
-healthDataSchema.statics.getHighRiskAreas = function(limit = 10) {
-  return this.find({
-    'healthMetrics.riskAssessment.overallRisk': { $in: ['high', 'critical'] },
-    status: 'active'
-  })
-  .sort({ 'healthMetrics.riskAssessment.riskScore': -1 })
-  .limit(limit);
-};
-
-// Static method to get health trends
-healthDataSchema.statics.getHealthTrends = function(region, days = 30) {
-  const startDate = new Date();
-  startDate.setDate(startDate.getDate() - days);
-  
-  return this.aggregate([
-    {
-      $match: {
-        'location.address.region': region,
-        createdAt: { $gte: startDate },
-        status: 'active'
-      }
-    },
-    {
-      $unwind: '$healthMetrics.diseases'
-    },
-    {
-      $group: {
-        _id: {
-          disease: '$healthMetrics.diseases.name',
-          date: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt' } }
-        },
-        cases: { $sum: '$healthMetrics.diseases.cases' },
-        trend: { $first: '$healthMetrics.diseases.trend' }
-      }
-    },
-    {
-      $sort: { '_id.date': 1, '_id.disease': 1 }
+      // Simple aggregation
+      return data.map(item => ({
+        date: item.created_at,
+        location: item.location,
+        metrics: item.health_metrics
+      }));
+    } catch (error) {
+      logger.error('Error getting health trends:', error);
+      return [];
     }
-  ]);
-};
+  }
 
-// Static method to get collection impact analysis
-healthDataSchema.statics.getCollectionImpactAnalysis = function(region) {
-  return this.aggregate([
-    {
-      $match: {
-        'location.address.region': region,
-        status: 'active'
-      }
-    },
-    {
-      $group: {
-        _id: null,
-        averageDiseaseReduction: { $avg: '$collectionImpact.diseaseReductionRate' },
-        averageEngagement: { $avg: '$collectionImpact.communityEngagementRate' },
-        totalPlasticCollected: { $sum: '$collectionImpact.totalPlasticCollected' },
-        averageRiskScore: { $avg: '$healthMetrics.riskAssessment.riskScore' }
-      }
+  // Get high-risk areas
+  static async getHighRiskAreas(limit = 20) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .select('*')
+        .eq('status', 'active')
+        .order('created_at', { ascending: false })
+        .limit(limit);
+
+      if (error) throw error;
+      
+      // Filter by high risk
+      return data
+        .filter(item => {
+          const risk = item.health_metrics?.riskAssessment?.overallRisk;
+          return risk === 'high' || risk === 'critical';
+        })
+        .map(item => new HealthData(item));
+    } catch (error) {
+      logger.error('Error getting high-risk areas:', error);
+      return [];
     }
-  ]);
-};
+  }
 
-module.exports = mongoose.model('HealthData', healthDataSchema);
+  // Get health stats - placeholder
+  static async getHealthStats() {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .select('*');
+
+      if (error) throw error;
+
+      return {
+        total: data.length,
+        active: data.filter(d => d.status === 'active').length,
+        bySource: data.reduce((acc, item) => {
+          acc[item.source] = (acc[item.source] || 0) + 1;
+          return acc;
+        }, {})
+      };
+    } catch (error) {
+      logger.error('Error getting health stats:', error);
+      return { total: 0, active: 0, bySource: {} };
+    }
+  }
+
+  // Get disease trends - placeholder
+  static async getDiseaseTrends(disease, region) {
+    try {
+      let query = supabaseAdmin
+        .from('health_data')
+        .select('*')
+        .eq('status', 'active');
+
+      const { data, error } = await query;
+
+      if (error) throw error;
+
+      // Simple filtering
+      return data.map(item => ({
+        date: item.created_at,
+        diseases: item.health_metrics?.diseases || []
+      }));
+    } catch (error) {
+      logger.error('Error getting disease trends:', error);
+      return [];
+    }
+  }
+
+  // Get environmental indicators - placeholder
+  static async getEnvironmentalIndicators(location) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .select('*')
+        .eq('status', 'active')
+        .limit(10);
+
+      if (error) throw error;
+
+      return data.map(item => ({
+        location: item.location,
+        environmental: item.health_metrics?.environmentalHealth || {}
+      }));
+    } catch (error) {
+      logger.error('Error getting environmental indicators:', error);
+      return [];
+    }
+  }
+
+  // Get preventive tips - placeholder
+  static async getPreventiveTips(location, category) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('health_data')
+        .select('*')
+        .eq('status', 'active')
+        .limit(10);
+
+      if (error) throw error;
+
+      return data.flatMap(item => item.ai_analysis?.recommendations || []);
+    } catch (error) {
+      logger.error('Error getting preventive tips:', error);
+      return [];
+    }
+  }
+
+  // Instance method to convert to JSON
+  toJSON() {
+    return { ...this };
+  }
+}
+
+module.exports = HealthData;

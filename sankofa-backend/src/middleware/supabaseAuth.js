@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken');
 const SupabaseUser = require('../models/SupabaseUser');
 const { AppError } = require('./errorHandler');
 const logger = require('../utils/logger');
@@ -22,11 +21,16 @@ const protect = async (req, res, next) => {
     }
 
     try {
-      // Verify token
-      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
-      
+      // Verify token with Supabase
+      const { data, error } = await supabase.auth.getUser(token);
+
+      if (error || !data || !data.user) {
+        logger.warn('Supabase token verification failed', error && error.message);
+        return res.status(401).json({ success: false, message: 'Invalid token' });
+      }
+
       // Get user from database
-      const user = await SupabaseUser.findById(decoded.id);
+      const user = await SupabaseUser.findById(data.user.id);
 
       if (!user) {
         return res.status(401).json({
@@ -38,9 +42,8 @@ const protect = async (req, res, next) => {
       // Attach user to request
       req.user = user;
       next();
-
     } catch (error) {
-      logger.error('Token verification error:', error.message);
+      logger.error('Token verification error:', error.message || error);
       return res.status(401).json({
         success: false,
         message: 'Invalid token'

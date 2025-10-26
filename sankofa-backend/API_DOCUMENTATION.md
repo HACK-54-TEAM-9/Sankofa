@@ -818,6 +818,8 @@ Include the JWT token in the Authorization header:
 Authorization: Bearer <your_jwt_token>
 ```
 
+Note: Authentication is handled via Supabase Auth in this project. When using Supabase-issued tokens, include the Supabase access token in the Authorization header as shown above. Token lifetimes and refresh behavior are governed by your Supabase project's authentication settings.
+
 ### Token Expiration
 
 - **Access Token**: 7 days
@@ -835,14 +837,17 @@ Authorization: Bearer <your_jwt_token>
 
 ## Development Notes
 
-⚠️ **Current Status**: The API is running in development mode with the following services disabled:
+⚠️ **Current Status**: The API is running in development mode. Supabase is used as the primary database and authentication provider for this project.
 
-- **Database**: MongoDB operations are skipped
-- **Redis**: Caching operations are skipped  
-- **SMS**: Twilio SMS service returns mock responses
-- **Email**: SMTP email service returns mock responses
+- **Database**: Supabase (Postgres) is enabled and used for data persistence. The project persists data to Supabase rather than MongoDB.
+- **Authentication**: Supabase Auth handles user authentication. Use Supabase-issued access tokens for protected endpoints (include them in the Authorization header as `Bearer <token>`). Token lifetimes and refresh behavior follow your Supabase project settings.
+- **Migrations / Setup**: Migration and supabase-related helper scripts are available at `scripts/migrate-to-supabase.js`. Supabase client configuration is in `src/config/supabase.js`.
+- **Environment**: Required environment variables include your Supabase connection and keys (for example: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` or `SUPABASE_KEY`, and `SUPABASE_ANON_KEY` when applicable). Keep these secrets out of version control and in a secure `.env` or secret manager.
+- **Redis**: Caching operations are currently disabled (if present in config).
+- **SMS**: Twilio SMS service currently returns mock responses in development.
+- **Email**: SMTP/email sending returns mock responses in development.
 
-All API endpoints are functional and return appropriate responses, but data persistence and external service integrations are disabled for development purposes.
+All API endpoints are functional and return appropriate responses; data persistence and authentication are active via Supabase in development. Keep credentials secure and consult `SUPABASE_SETUP.md` or `SUPABASE_COMPLETE_SETUP.md` for project-specific setup steps.
 
 ---
 

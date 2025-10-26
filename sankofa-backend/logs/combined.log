@@ -653,3 +653,125 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-25 22:24:09:249"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-25 22:24:11:2411"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [25/Oct/2025:22:24:11 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.48.0\"\u001b[39m","timestamp":"2025-10-25 22:24:11:2411"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-25 23:03:02:32"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-25 23:03:02:32"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-25 23:03:04:34"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-25 23:03:17:317"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-25 23:03:19:319"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [25/Oct/2025:23:03:19 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.48.0\"\u001b[39m","timestamp":"2025-10-25 23:03:19:319"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 05:45:46:4546"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 05:45:46:4546"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 05:45:48:4548"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:05:49:26 +0000] \"GET /api/auth/me HTTP/1.1\" 401 65 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 05:49:26:4926"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 05:49:40:4940"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 05:49:41:4941"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:05:49:41 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 05:49:41:4941"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:05:50:00 +0000] \"GET /api/auth/me HTTP/1.1\" 401 65 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 05:50:00:500"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:05:51:09 +0000] \"GET /api/users HTTP/1.1\" 401 63 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 05:51:09:519"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:05:59:01 +0000] \"GET /api/users HTTP/1.1\" 401 63 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 05:59:01:591"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:06:03:09 +0000] \"GET /api/health/trends HTTP/1.1\" 500 517 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 06:03:09:39"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 06:12:17:1217"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 06:12:17:1217"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 06:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 06:12:24:1224"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 06:12:26:1226"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:06:12:26 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 06:12:26:1226"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mMissing required Supabase environment variables\u001b[39m","timestamp":"2025-10-26 06:15:11:1511"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 06:16:37:1637"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 06:16:37:1637"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 06:16:39:1639"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:06:18:38 +0000] \"GET /api/auth/login HTTP/1.1\" 404 61 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 06:18:38:1838"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 06:18:45:1845"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 06:18:45:1845"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 06:18:46:1846"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 06:18:52:1852"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 06:18:53:1853"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:06:18:53 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 06:18:53:1853"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 06:20:04:204"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 06:32:07:327"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 06:32:07:327"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 06:32:09:329"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 06:32:09:329"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 06:32:09:329"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:06:33:40 +0000] \"HEAD /api/health/insights HTTP/1.1\" 500 1434 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 06:33:40:3340"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:06:34:01 +0000] \"GET /api/health/insights HTTP/1.1\" 500 1434 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 06:34:01:341"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mMissing required Supabase environment variables\u001b[39m","timestamp":"2025-10-26 06:54:47:5447"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mRequired: SUPABASE_URL, SUPABASE_ANON_KEY\u001b[39m","timestamp":"2025-10-26 06:54:47:5447"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mOptional: SUPABASE_SERVICE_ROLE_KEY\u001b[39m","timestamp":"2025-10-26 06:54:47:5447"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 07:00:55:055"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:01:07:17"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:01:07:17"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 07:01:08:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:01:22 +0000] \"GET /health HTTP/1.1\" 200 122 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:01:22:122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:01:31 +0000] \"GET /api/health/insights HTTP/1.1\" 200 41 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:01:31:131"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:01:44 +0000] \"GET /health HTTP/1.1\" 200 122 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:01:44:144"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:01:44 +0000] \"GET /api/health HTTP/1.1\" 200 194 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:01:44:144"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:02:15:215"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:02:15:215"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:02:16:216"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:02:16:216"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:02:16:216"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 07:02:19:219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 07:02:21:221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:02:21 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 07:02:21:221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:02:42 +0000] \"POST /api/health/insights HTTP/1.1\" 401 63 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 07:02:42:242"}

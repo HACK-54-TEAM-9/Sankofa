@@ -11,13 +11,14 @@ const getHubs = asyncHandler(async (req, res) => {
   const filter = {};
   if (status) filter.status = status;
   
-  const hubs = await Hub.find(filter)
-    .populate('manager', 'name email')
-    .sort({ createdAt: -1 })
-    .limit(limit * 1)
-    .skip((page - 1) * limit);
+  const options = {
+    limit: parseInt(limit),
+    offset: (page - 1) * parseInt(limit),
+    sort: 'created_at',
+    order: 'desc'
+  };
 
-  const total = await Hub.countDocuments(filter);
+  const { hubs, total } = await Hub.find(filter, options);
 
   res.json({
     success: true,
@@ -37,8 +38,7 @@ const getHubs = asyncHandler(async (req, res) => {
 // @route   GET /api/hubs/:id
 // @access  Private
 const getHubById = asyncHandler(async (req, res) => {
-  const hub = await Hub.findById(req.params.id)
-    .populate('manager', 'name email');
+  const hub = await Hub.findById(req.params.id);
 
   if (!hub) {
     throw new AppError('Hub not found', 404);
@@ -56,7 +56,7 @@ const getHubById = asyncHandler(async (req, res) => {
 const createHub = asyncHandler(async (req, res) => {
   const hub = await Hub.create(req.body);
   
-  logger.info('Hub created', { hubId: hub._id, name: hub.name });
+  logger.info('Hub created', { hubId: hub.id, name: hub.name });
 
   res.status(201).json({
     success: true,
@@ -71,8 +71,7 @@ const createHub = asyncHandler(async (req, res) => {
 const updateHub = asyncHandler(async (req, res) => {
   const hub = await Hub.findByIdAndUpdate(
     req.params.id,
-    req.body,
-    { new: true, runValidators: true }
+    req.body
   );
 
   if (!hub) {

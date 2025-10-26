@@ -1,129 +1,183 @@
-const mongoose = require('mongoose');
+const { supabase, supabaseAdmin } = require('../config/supabase');
+const logger = require('../utils/logger');
 
-const VolunteerSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, 'Please add a name']
-  },
-  email: {
-    type: String,
-    required: [true, 'Please add an email'],
-    match: [
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      'Please add a valid email'
-    ]
-  },
-  phone: {
-    type: String,
-    required: [true, 'Please add a phone number'],
-    match: [/^\+233\d{9}$/, 'Please add a valid Ghana phone number']
-  },
-  opportunityId: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'VolunteerOpportunity',
-    required: [true, 'Please select a volunteer opportunity']
-  },
-  skills: [String],
-  availability: {
-    days: [String],
-    hours: {
-      start: String,
-      end: String
-    }
-  },
-  status: {
-    type: String,
-    enum: ['pending', 'approved', 'rejected', 'active', 'inactive'],
-    default: 'pending'
-  },
-  applicationDate: {
-    type: Date,
-    default: Date.now
-  },
-  approvedBy: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
-  },
-  approvedAt: Date,
-  rejectionReason: String,
-  rejectedBy: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
-  },
-  rejectedAt: Date,
-  assignedOpportunity: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'VolunteerOpportunity'
-  },
-  hoursVolunteered: {
-    type: Number,
-    default: 0
-  },
-  impact: {
-    collectionsAssisted: {
-      type: Number,
-      default: 0
-    },
-    communitiesReached: {
-      type: Number,
-      default: 0
-    },
-    healthEducationSessions: {
-      type: Number,
-      default: 0
-    }
-  },
-  feedback: [{
-    rating: {
-      type: Number,
-      min: 1,
-      max: 5
-    },
-    comment: String,
-    date: {
-      type: Date,
-      default: Date.now
-    }
-  }],
-  createdAt: {
-    type: Date,
-    default: Date.now
+// Volunteer model using Supabase
+class Volunteer {
+  constructor(data) {
+    Object.assign(this, data);
   }
-});
 
-// Static method to get volunteer opportunities
-VolunteerSchema.statics.getVolunteerOpportunities = function() {
-  return [
-    {
-      id: 'opp_1',
-      title: 'Community Outreach',
-      description: 'Help educate communities about plastic pollution and health risks',
-      location: 'Accra',
-      duration: '3 months',
-      requirements: ['Communication skills', 'Community engagement'],
-      benefits: ['Training', 'Certificate', 'Networking']
-    },
-    {
-      id: 'opp_2',
-      title: 'Collection Support',
-      description: 'Assist with plastic collection activities and hub operations',
-      location: 'Kumasi',
-      duration: '6 months',
-      requirements: ['Physical fitness', 'Teamwork'],
-      benefits: ['Training', 'Certificate', 'Transport allowance']
+  // Create new volunteer
+  static async create(volunteerData) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('volunteers')
+        .insert([volunteerData])
+        .select()
+        .single();
+
+      if (error) throw error;
+      return new Volunteer(data);
+    } catch (error) {
+      logger.error('Error creating volunteer:', error);
+      throw error;
     }
-  ];
-};
+  }
 
-// Static method to get volunteer statistics
-VolunteerSchema.statics.getVolunteerStats = function() {
-  return {
-    totalVolunteers: 75,
-    activeVolunteers: 60,
-    pendingApplications: 15,
-    totalHoursVolunteered: 2500,
-    averageRating: 4.2
-  };
-};
+  // Find volunteer by ID
+  static async findById(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('volunteers')
+        .select('*, user:users!user_id(id, name, email, phone)')
+        .eq('id', id)
+        .single();
 
-module.exports = mongoose.model('Volunteer', VolunteerSchema);
+      if (error) throw error;
+      return data ? new Volunteer(data) : null;
+    } catch (error) {
+      logger.error('Error finding volunteer:', error);
+      return null;
+    }
+  }
+
+  // Find all volunteers with filters
+  static async find(filter = {}, options = {}) {
+    try {
+      let query = supabaseAdmin
+        .from('volunteers')
+        .select('*, user:users!user_id(id, name, email, phone)', { count: 'exact' });
+
+      // Apply filters
+      if (filter.user_id) query = query.eq('user_id', filter.user_id);
+      if (filter.status) query = query.eq('status', filter.status);
+      if (filter.opportunity_id) query = query.eq('opportunity_id', filter.opportunity_id);
+
+      // Apply sorting
+      const sortField = options.sort || 'created_at';
+      const sortOrder = options.order || 'desc';
+      query = query.order(sortField, { ascending: sortOrder === 'asc' });
+
+      // Apply pagination
+      if (options.limit) query = query.limit(options.limit);
+
+      const { data, error, count } = await query;
+
+      if (error) throw error;
+      return {
+        volunteers: data.map(item => new Volunteer(item)),
+        total: count
+      };
+    } catch (error) {
+      logger.error('Error finding volunteers:', error);
+      throw error;
+    }
+  }
+
+  // Update volunteer
+  static async findByIdAndUpdate(id, updateData, options = {}) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('volunteers')
+        .update({ ...updateData, updated_at: new Date().toISOString() })
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new Volunteer(data) : null;
+    } catch (error) {
+      logger.error('Error updating volunteer:', error);
+      throw error;
+    }
+  }
+
+  // Delete volunteer
+  static async findByIdAndDelete(id) {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('volunteers')
+        .delete()
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data ? new Volunteer(data) : null;
+    } catch (error) {
+      logger.error('Error deleting volunteer:', error);
+      throw error;
+    }
+  }
+
+  // Get volunteer opportunities (static data)
+  static getVolunteerOpportunities() {
+    return [
+      {
+        id: 'opp_1',
+        title: 'Community Outreach',
+        description: 'Help educate communities about plastic pollution and health risks',
+        category: 'Education',
+        timeCommitment: 'Flexible',
+        skills: ['Communication', 'Public Speaking']
+      },
+      {
+        id: 'opp_2',
+        title: 'Collection Support',
+        description: 'Assist at collection hubs and help manage operations',
+        category: 'Operations',
+        timeCommitment: '4-8 hours/week',
+        skills: ['Organization', 'Physical Work']
+      },
+      {
+        id: 'opp_3',
+        title: 'Health Education',
+        description: 'Conduct health workshops and awareness programs',
+        category: 'Health',
+        timeCommitment: '2-4 hours/week',
+        skills: ['Teaching', 'Health Knowledge']
+      },
+      {
+        id: 'opp_4',
+        title: 'Data Collection',
+        description: 'Help gather and analyze environmental health data',
+        category: 'Research',
+        timeCommitment: 'Flexible',
+        skills: ['Data Entry', 'Analysis']
+      }
+    ];
+  }
+
+  // Get volunteer statistics
+  static async getStats() {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('volunteers')
+        .select('*');
+
+      if (error) throw error;
+
+      const stats = {
+        total: data.length,
+        byStatus: data.reduce((acc, vol) => {
+          acc[vol.status] = (acc[vol.status] || 0) + 1;
+          return acc;
+        }, {}),
+        totalHours: data.reduce((sum, vol) => sum + (vol.hours_volunteered || 0), 0),
+        active: data.filter(v => v.status === 'active').length
+      };
+
+      return stats;
+    } catch (error) {
+      logger.error('Error getting volunteer stats:', error);
+      throw error;
+    }
+  }
+
+  // Instance method to convert to JSON
+  toJSON() {
+    return { ...this };
+  }
+}
+
+module.exports = Volunteer;
