@@ -64,3 +64,5 @@
 {"code":"22P02","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError finding collection: invalid input syntax for type uuid: \"state\"\u001b[39m","timestamp":"2025-10-26 12:05:33:533"}
 {"code":"PGRST204","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError creating AI interaction: Could not find the 'context' column of 'ai_interactions' in the schema cache\u001b[39m","timestamp":"2025-10-26 12:08:13:813"}
 {"code":"PGRST204","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError creating AI interaction: Could not find the 'query' column of 'ai_interactions' in the schema cache\u001b[39m","timestamp":"2025-10-26 12:09:38:938"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31m❌ Supabase connection failed:\u001b[39m","timestamp":"2025-10-26 12:57:53:5753"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31m❌ Supabase connection failed:\u001b[39m","timestamp":"2025-10-26 13:26:37:2637"}
