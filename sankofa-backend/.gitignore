@@ -1,4 +1,4 @@
 node_modules/
-*API_DOC
+*.md
 .env
 

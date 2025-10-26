@@ -12,6 +12,11 @@ const { supabase, supabaseAdmin } = require('../config/supabase');
 const register = asyncHandler(async (req, res) => {
   const { name, email, phone, password, role } = req.body;
 
+  // Validate required fields
+  if (!name || !email || !phone || !password) {
+    throw new AppError('Please provide name, email, phone, and password', 400);
+  }
+
   logger.info(`Registration attempt for: ${email}`);
 
   // Check if user already exists

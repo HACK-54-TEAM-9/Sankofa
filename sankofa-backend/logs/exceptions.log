@@ -628,3 +628,51 @@
 [31m    at listenInCluster (node:net:1996:12)[39m
 [31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
 [31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:21:1421 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:29:1429 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:44:1444 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:46:1446 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 08:29:24:2924 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 09:53:44:5344 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 11:11:39:1139 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 11:29:38:2938 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m

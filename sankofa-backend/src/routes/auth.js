@@ -16,8 +16,9 @@ const {
   resetPassword,
   refreshToken
 } = require('../controllers/supabaseAuthController');
-const { protect, authorize } = require('../middleware/supabaseAuth');
+const { protect, authorize } = require('../middleware/auth');
 const { asyncHandler } = require('../middleware/errorHandler');
+const validate = require('../middleware/validate');
 
 const router = express.Router();
 
@@ -94,21 +95,22 @@ const phoneVerificationValidation = [
 ];
 
 // Public routes
-router.post('/register', registerValidation, asyncHandler(register));
-router.post('/login', loginValidation, asyncHandler(login));
+router.post('/register', registerValidation, validate, asyncHandler(register));
+router.post('/login', loginValidation, validate, asyncHandler(login));
 router.post('/logout', asyncHandler(logout));
-router.post('/forgot-password', forgotPasswordValidation, asyncHandler(forgotPassword));
-router.post('/reset-password', resetPasswordValidation, asyncHandler(resetPassword));
+router.post('/forgot-password', forgotPasswordValidation, validate, asyncHandler(forgotPassword));
+router.post('/reset-password', resetPasswordValidation, validate, asyncHandler(resetPassword));
 router.get('/verify-email', asyncHandler(verifyEmail));
-router.post('/resend-verification', forgotPasswordValidation, asyncHandler(resendVerification));
-router.post('/verify-phone', phoneVerificationValidation, asyncHandler(verifyPhone));
-router.post('/resend-phone-verification', forgotPasswordValidation, asyncHandler(resendPhoneVerification));
+router.post('/resend-verification', forgotPasswordValidation, validate, asyncHandler(resendVerification));
+router.post('/verify-phone', phoneVerificationValidation, validate, asyncHandler(verifyPhone));
+router.post('/resend-phone-verification', forgotPasswordValidation, validate, asyncHandler(resendPhoneVerification));
 router.post('/refresh-token', asyncHandler(refreshToken));
 
 // Protected routes
 router.get('/me', protect, asyncHandler(getMe));
+router.get('/profile', protect, asyncHandler(getMe)); // Alias for /me
 router.put('/profile', protect, asyncHandler(updateProfile));
-router.put('/password', protect, updatePasswordValidation, asyncHandler(updatePassword));
+router.put('/password', protect, updatePasswordValidation, validate, asyncHandler(updatePassword));
 router.delete('/account', protect, asyncHandler(deleteAccount));
 
 module.exports = router;

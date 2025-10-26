@@ -775,3 +775,271 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: nkgnyarko@gmail.com\u001b[39m","timestamp":"2025-10-26 07:02:21:221"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:02:21 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 07:02:21:221"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:02:42 +0000] \"POST /api/health/insights HTTP/1.1\" 401 63 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 07:02:42:242"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:22 +0000] \"GET /health HTTP/1.1\" 200 123 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:22:822"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mRegistration attempt for: @\u001b[39m","timestamp":"2025-10-26 07:08:22:822"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mRegistration error: Illegal arguments: undefined, string\u001b[39m","stack":"Error: Illegal arguments: undefined, string\n    at _async (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/bcryptjs/dist/bcrypt.js:214:46)\n    at /home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/bcryptjs/dist/bcrypt.js:223:17\n    at new Promise (<anonymous>)\n    at bcrypt.hash (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/bcryptjs/dist/bcrypt.js:222:20)\n    at /home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/controllers/supabaseAuthController.js:32:41","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"POST /api/auth/register HTTP/1.1\" 500 305 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: @\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"POST /api/auth/login HTTP/1.1\" 401 366 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/auth/profile HTTP/1.1\" 404 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/users HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/users/stats HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/collections HTTP/1.1\" 200 185 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/collections/stats HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/hubs HTTP/1.1\" 200 163 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/hubs/nearby HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/health HTTP/1.1\" 200 194 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:23 +0000] \"GET /api/health/insights HTTP/1.1\" 200 41 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:23:823"}
+{"code":"42703","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError getting health trends: column health_data.status does not exist\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/health/trends HTTP/1.1\" 200 37 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"code":"42703","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError getting high-risk areas: column health_data.status does not exist\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/health/high-risk-areas HTTP/1.1\" 200 44 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/ai HTTP/1.1\" 200 198 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"POST /api/ai/chat HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/donations HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/donations/stats HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/volunteers HTTP/1.1\" 200 222 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/volunteers/opportunities HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/payments HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/analytics HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:08:24 +0000] \"GET /api/analytics/overview HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:08:24:824"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:20 +0000] \"GET /health HTTP/1.1\" 200 123 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:20:1120"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mRegistration attempt for: @\u001b[39m","timestamp":"2025-10-26 07:11:20:1120"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mRegistration error: Illegal arguments: undefined, string\u001b[39m","stack":"Error: Illegal arguments: undefined, string\n    at _async (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/bcryptjs/dist/bcrypt.js:214:46)\n    at /home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/bcryptjs/dist/bcrypt.js:223:17\n    at new Promise (<anonymous>)\n    at bcrypt.hash (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/bcryptjs/dist/bcrypt.js:222:20)\n    at /home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/controllers/supabaseAuthController.js:32:41","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"POST /api/auth/register HTTP/1.1\" 500 305 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: @\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"POST /api/auth/login HTTP/1.1\" 401 366 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/auth/profile HTTP/1.1\" 404 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/users HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/users/stats HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/collections HTTP/1.1\" 200 185 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/collections/stats HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/hubs HTTP/1.1\" 200 163 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/hubs/nearby HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/health HTTP/1.1\" 200 194 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/health/insights HTTP/1.1\" 200 41 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"code":"42703","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError getting health trends: column health_data.status does not exist\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:22 +0000] \"GET /api/health/trends HTTP/1.1\" 200 37 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:22:1122"}
+{"code":"42703","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError getting high-risk areas: column health_data.status does not exist\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/health/high-risk-areas HTTP/1.1\" 200 44 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/ai HTTP/1.1\" 200 198 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"POST /api/ai/chat HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/donations HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/donations/stats HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/volunteers HTTP/1.1\" 200 222 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/volunteers/opportunities HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/payments HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/analytics HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:11:23 +0000] \"GET /api/analytics/overview HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:14:21:1421"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:14:21:1421"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:14:21:1421"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:14:21:1421"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:14:21:1421"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:14:28:1428"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:14:28:1428"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:14:29:1429"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:14:29:1429"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:14:29:1429"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:14:43:1443"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:14:43:1443"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:14:44:1444"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:14:44:1444"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:14:44:1444"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:14:45:1445"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:14:45:1445"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:14:46:1446"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:14:46:1446"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:14:46:1446"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:15:40 +0000] \"GET /api/health HTTP/1.1\" 200 194 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:15:40:1540"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 07:15:49:1549"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 07:15:49:1549"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 07:15:50:1550"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:07:16:05 +0000] \"POST /api/auth/register HTTP/1.1\" 400 1259 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 07:16:05:165"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 08:29:23:2923"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 08:29:23:2923"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 08:29:24:2924"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 08:29:24:2924"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 08:29:24:2924"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 09:53:43:5343"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 09:53:43:5343"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 09:53:44:5344"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 09:53:44:5344"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 09:53:44:5344"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 10:37:44:3744"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 10:37:44:3744"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 10:37:48:3748"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 11:11:36:1136"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 11:11:36:1136"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 11:11:39:1139"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 11:11:39:1139"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 11:11:39:1139"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 11:12:49:1249"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:13:31 +0000] \"GET /health HTTP/1.1\" 200 122 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:13:31:1331"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:13:35:1335"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:13:37 +0000] \"POST /api/auth/login HTTP/1.1\" 401 282 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:13:37:1337"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:14:06 +0000] \"GET /api/health HTTP/1.1\" 200 194 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:14:06:146"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:18:56:1856"}
+{"code":"PGRST204","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError updating user: Could not find the 'last_activity' column of 'users' in the schema cache\u001b[39m","timestamp":"2025-10-26 11:18:57:1857"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:18:57 +0000] \"POST /api/auth/login HTTP/1.1\" 500 276 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:18:57:1857"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:22:11:2211"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:22:13:2213"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:22:13 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1127 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:22:13:2213"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:22:24:2224"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:22:25:2225"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:22:25 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1169 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:22:25:2225"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:22:44 +0000] \"GET /api/hubs HTTP/1.1\" 200 163 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:22:44:2244"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:22:44 +0000] \"GET /api/collections HTTP/1.1\" 200 185 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:22:44:2244"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:22:44 +0000] \"GET /api/health/insights?lat=5.6037&lng=-0.1870 HTTP/1.1\" 200 7117 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:22:44:2244"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:22:44 +0000] \"GET /api/ai/popular-queries HTTP/1.1\" 500 1453 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:22:44:2244"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:22:54 +0000] \"GET /api/hubs HTTP/1.1\" 200 163 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:22:54:2254"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:23:08 +0000] \"GET /api/hubs HTTP/1.1\" 200 163 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:23:08:238"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 11:29:35:2935"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 11:29:35:2935"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 11:29:38:2938"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 11:29:38:2938"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 11:29:38:2938"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:29:59 +0000] \"GET /api/health HTTP/1.1\" 200 194 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:29:59:2959"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:32:11 +0000] \"GET /api/users HTTP/1.1\" 401 63 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:32:11:3211"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mRegistration attempt for: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:37:41:3741"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser registered successfully: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:37:43:3743"}
+{"code":"PGRST204","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError updating user: Could not find the 'emailVerificationToken' column of 'users' in the schema cache\u001b[39m","timestamp":"2025-10-26 11:37:43:3743"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mEmail sending failed (non-blocking):\u001b[39m","timestamp":"2025-10-26 11:37:43:3743"}
+{"code":"PGRST204","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError updating user: Could not find the 'phoneVerificationCode' column of 'users' in the schema cache\u001b[39m","timestamp":"2025-10-26 11:37:44:3744"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mSMS sending failed (non-blocking):\u001b[39m","timestamp":"2025-10-26 11:37:44:3744"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:37:44 +0000] \"POST /api/auth/register HTTP/1.1\" 201 621 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:37:44:3744"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:39:38:3938"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:39:40:3940"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:39:40 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:39:40:3940"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:42:22 +0000] \"POST /api/auth/me HTTP/1.1\" 404 58 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:42:22:4222"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:42:32 +0000] \"GET /api/auth/me HTTP/1.1\" 401 65 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:42:32:4232"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:43:10 +0000] \"GET /api/auth/me HTTP/1.1\" 401 65 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:43:10:4310"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mSupabase token verification failed\u001b[39m","timestamp":"2025-10-26 11:45:11:4511"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:45:11 +0000] \"GET /api/auth/me HTTP/1.1\" 401 43 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:45:11:4511"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mSupabase token verification failed\u001b[39m","timestamp":"2025-10-26 11:45:47:4547"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:45:47 +0000] \"GET /api/auth/me HTTP/1.1\" 401 43 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:45:47:4547"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mSupabase token verification failed\u001b[39m","timestamp":"2025-10-26 11:46:17:4617"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:46:17 +0000] \"GET /api/auth/me HTTP/1.1\" 401 43 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:46:17:4617"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:46:45:4645"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:46:50:4650"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:46:50 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:46:50:4650"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mSupabase token verification failed\u001b[39m","timestamp":"2025-10-26 11:49:48:4948"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:49:48 +0000] \"GET /api/auth/me HTTP/1.1\" 401 43 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 11:49:48:4948"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 11:51:45:5145"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 11:51:45:5145"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 11:51:52:5152"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 11:54:31:5431"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:54:53:5453"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 11:54:55:5455"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:54:55 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1174 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:54:55:5455"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:55:06 +0000] \"GET /api/auth/me HTTP/1.1\" 401 65 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:55:06:556"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 11:55:28:5528"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 11:55:28:5528"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 11:55:29:5529"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:55:42:5542"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:55:43:5543"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:55:43 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1168 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:55:43:5543"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:56:11:5611"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:56:13:5613"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:56:13 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1169 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:56:13:5613"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:56:37 +0000] \"GET /api/auth/me HTTP/1.1\" 401 51 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:56:37:5637"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 11:58:54:5854"}
+{"code":"","details":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:15363:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async SupabaseUser.findByEmail (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/models/SupabaseUser.js:39:31)\n    at async /home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/controllers/supabaseAuthController.js:120:16","hint":"","level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError finding user by email: TypeError: fetch failed\u001b[39m","timestamp":"2025-10-26 11:58:58:5858"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:11:58:58 +0000] \"POST /api/auth/login HTTP/1.1\" 500 586 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 11:58:58:5858"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 12:00:20:020"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 12:00:20:020"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 12:00:21:021"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:00:35:035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:00:37:037"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:00:37 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1169 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 12:00:37:037"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:00:47 +0000] \"GET /api/auth/me HTTP/1.1\" 401 63 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 12:00:47:047"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:00:57:057"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:00:58 +0000] \"GET /api/auth/me HTTP/1.1\" 200 587 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-26 12:00:58:058"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 12:01:40:140"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 12:01:41:141"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:01:41 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:01:41:141"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: test.collector@example.com\u001b[39m","timestamp":"2025-10-26 12:02:12:212"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:02:14 +0000] \"GET /api/auth/me HTTP/1.1\" 401 76 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:02:14:214"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:03:39:339"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:03:41:341"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:03:41 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:03:41:341"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:04:10 +0000] \"POST /api/auth/me HTTP/1.1\" 404 58 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:04:10:410"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:04:18:418"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:04:19 +0000] \"GET /api/auth/me HTTP/1.1\" 200 587 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:04:19:419"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:04:45 +0000] \"GET /api/hubs HTTP/1.1\" 200 163 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:04:45:445"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:04:58:458"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:04:58 +0000] \"GET /api/hubs/nearby HTTP/1.1\" 400 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:04:58:458"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:05:15 +0000] \"GET /api/collections HTTP/1.1\" 200 185 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:05:15:515"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:05:21 +0000] \"GET /api/collections/stats HTTP/1.1\" 401 63 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-26 12:05:21:521"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:05:21 +0000] \"GET /favicon.ico HTTP/1.1\" 404 58 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-26 12:05:21:521"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:05:31:531"}
+{"code":"22P02","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError finding collection: invalid input syntax for type uuid: \"state\"\u001b[39m","timestamp":"2025-10-26 12:05:33:533"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:05:33 +0000] \"GET /api/collections/state HTTP/1.1\" 404 353 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:05:33:533"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:07:15:715"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:07:16 +0000] \"GET /api/hubs/nearby?lat=5.6037&lng=-0.1870&radius=10 HTTP/1.1\" 400 - \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:07:16:716"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:08:12:812"}
+{"code":"PGRST204","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError creating AI interaction: Could not find the 'context' column of 'ai_interactions' in the schema cache\u001b[39m","timestamp":"2025-10-26 12:08:13:813"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:08:13 +0000] \"POST /api/ai/chat HTTP/1.1\" 500 284 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:08:13:813"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:09:37:937"}
+{"code":"PGRST204","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError creating AI interaction: Could not find the 'query' column of 'ai_interactions' in the schema cache\u001b[39m","timestamp":"2025-10-26 12:09:38:938"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:09:38 +0000] \"POST /api/ai/chat HTTP/1.1\" 500 280 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:09:38:938"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:14:52:1452"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAI interaction logged\u001b[39m","queryLength":51,"timestamp":"2025-10-26 12:14:55:1455","userId":"550e8400-e29b-41d4-a716-446655440001"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:14:55 +0000] \"POST /api/ai/chat HTTP/1.1\" 200 213 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:14:55:1455"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:15:59:1559"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:16:01 +0000] \"POST /api/analytics/dashboard HTTP/1.1\" 404 70 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:16:01:161"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 12:16:08:168"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:12:16:11 +0000] \"GET /api/analytics/dashboard HTTP/1.1\" 200 210 \"-\" \"PostmanRuntime/7.49.0\"\u001b[39m","timestamp":"2025-10-26 12:16:11:1611"}
