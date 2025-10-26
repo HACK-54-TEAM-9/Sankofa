@@ -1,6 +1,4 @@
 import { CTAButtons } from "./CTAButtons";
-import { ImpactMetric } from "./ImpactMetric";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { AIFloatingButton } from "./AIFloatingButton";
 import { CustomerServiceChatbot } from "./CustomerServiceChatbot";
 import { Button } from "./ui/button";
@@ -17,8 +15,9 @@ import {
   Heart,
   ArrowRight,
   CheckCircle2,
+  Award,
+  Quote,
 } from "lucide-react";
-import { motion } from "framer-motion";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -35,23 +34,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="flex items-center justify-center gap-2 text-sm">
             <Sparkles className="h-4 w-4" />
             <span className="font-bold">
-              {"Get AI health insights and solutions for your area".split("").map((char, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.03,
-                    ease: "easeOut",
-                    repeat: Infinity,
-                    repeatDelay: 2.5
-                  }}
-                  style={{ display: "inline-block" }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+              Get AI health insights and solutions for your area
             </span>
             <button
               onClick={() => onNavigate("location-insights")}
@@ -64,8 +47,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </div>
 
       {/* Hero Section - Clean & Minimal */}
-      <section className="bg-white">
-        <div className="container mx-auto px-4 py-20 md:py-28">
+      <section className="bg-white h-[calc(100vh-5rem)] flex items-center">
+        <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid gap-12 md:grid-cols-2 items-center">
               <div className="space-y-8">
@@ -144,7 +127,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-gray-100">
-                    <ImageWithFallback
+                    <img
                       src="https://images.unsplash.com/photo-1710093072220-3fa669053619?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxHaGFuYSUyMHJlY3ljbGluZyUyMHBsYXN0aWN8ZW58MXx8fHwxNzYxMzc5NjMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                       alt="Recycling plastic"
                       className="w-full h-full object-cover"
@@ -153,7 +136,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
                 <div className="space-y-4 pt-8">
                   <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-gray-100">
-                    <ImageWithFallback
+                    <img
                       src="https://images.unsplash.com/photo-1634710664586-fe890319a9fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwaGVhbHRofGVufDF8fHx8MTc2MTM3OTYzMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                       alt="Community health"
                       className="w-full h-full object-cover"

@@ -72,8 +72,12 @@ function AppContent() {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-700">
-                  <span className="text-white">🐦</span>
+                <div className="h-10 w-10 flex items-center justify-center">
+                  <img 
+                    src="/logo.png" 
+                    alt="Sankofa Logo" 
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <span className="text-white">Sankofa-Coin</span>
               </div>

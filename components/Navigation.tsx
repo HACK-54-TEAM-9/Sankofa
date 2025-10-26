@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Menu, X, LogIn, LogOut, User, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from './ui/sheet';
@@ -20,7 +20,6 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
   const { user, logout, isAuthenticated } = useAuth();
 
   const navItems = [
@@ -50,79 +49,69 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md">
-      <div className="container mx-auto px-4">
+    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
+      <div className="container mx-auto px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => handleNavigate('home')}
             className="flex items-center gap-3 group"
           >
-            <div className="h-12 w-12 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="h-10 w-10 flex items-center justify-center group-hover:scale-105 transition-transform">
               <MaskGroup />
             </div>
-            <span className="text-xl text-gray-900">
+            <span className="text-xl font-bold text-penny-dark">
               Sankofa
             </span>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-8 lg:flex">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden items-center gap-10 lg:flex absolute left-1/2 -translate-x-1/2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavigate(item.id)}
-                className={`text-sm transition-colors relative group ${
-                  currentPage === item.id ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+                className={`text-base font-medium transition-colors relative ${
+                  currentPage === item.id ? 'text-penny-dark' : 'text-gray-600 hover:text-penny-dark'
                 }`}
               >
                 {item.label}
-                {currentPage === item.id && (
-                  <div className="absolute -bottom-8 left-0 right-0 h-0.5 bg-[#10b981]"></div>
-                )}
               </button>
             ))}
             
             {/* Resources Dropdown */}
-            <DropdownMenu open={resourcesOpen} onOpenChange={setResourcesOpen}>
-              <div
-                onMouseEnter={() => setResourcesOpen(true)}
-                onMouseLeave={() => setResourcesOpen(false)}
+            <div className="relative group">
+              <button
+                className={`text-base font-medium transition-colors relative flex items-center gap-1 ${
+                  resourcesItems.some(item => item.id === currentPage)
+                    ? 'text-penny-dark'
+                    : 'text-gray-600 hover:text-penny-dark'
+                }`}
               >
-                <DropdownMenuTrigger asChild>
+                Resources
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              {/* Dropdown menu with CSS hover */}
+              <div className="absolute top-full right-0 mt-4 w-56 bg-white rounded-2xl shadow-xl border border-gray-200 opacity-0 invisible overflow-hidden group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {resourcesItems.map((item) => (
                   <button
-                    className={`text-sm transition-colors relative group flex items-center gap-1 ${
-                      resourcesItems.some(item => item.id === currentPage)
-                        ? 'text-gray-900'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
+                    key={item.id}
+                    onClick={() => handleNavigate(item.id)}
+                    className="w-full text-left px-6 py-3 text-base text-gray-900 hover:bg-gray-200 hover:text-[#1a1a1a] transition-colors font-medium first:rounded-t-2xl last:rounded-b-2xl"
                   >
-                    Resources
-                    <ChevronDown className="h-3 w-3" />
-                    {resourcesItems.some(item => item.id === currentPage) && (
-                      <div className="absolute -bottom-8 left-0 right-0 h-0.5 bg-[#10b981]"></div>
-                    )}
+                    {item.label}
                   </button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48 rounded-2xl">
-                  {resourcesItems.map((item) => (
-                    <DropdownMenuItem
-                      key={item.id}
-                      onClick={() => handleNavigate(item.id)}
-                      className="cursor-pointer rounded-xl"
-                    >
-                      {item.label}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
+                ))}
               </div>
-            </DropdownMenu>
+            </div>
+          </div>
             
-            {/* Auth Section */}
+          {/* Auth Section - Right side */}
+          <div className="hidden lg:flex items-center gap-3">
             {isAuthenticated && user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="gap-2 rounded-full border-2">
+                  <Button variant="outline" className="gap-2 rounded-full border">
                     <User className="h-4 w-4" />
                     {user.name}
                   </Button>
@@ -145,13 +134,21 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button
-                onClick={() => handleNavigate('login')}
-                className="bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full px-6 gap-2"
-              >
-                <LogIn className="h-4 w-4" />
-                Login
-              </Button>
+              <>
+                <Button
+                  onClick={() => handleNavigate('login')}
+                  variant="outline"
+                  className="rounded-full px-7 py-5 border-2 border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-colors font-medium"
+                >
+                  Join Sankofa
+                </Button>
+                <Button
+                  onClick={() => handleNavigate('login')}
+                  className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-full px-7 py-5 font-medium"
+                >
+                  Login
+                </Button>
+              </>
             )}
           </div>
 
@@ -234,8 +231,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                     <button
                       onClick={() => handleNavigate('login')}
                       className="w-full bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2"
+                  
                     >
-                      <LogIn className="h-4 w-4" />
+                      <LogIn className="h-4 w-4 text-white  " />
                       Login
                     </button>
                   )}

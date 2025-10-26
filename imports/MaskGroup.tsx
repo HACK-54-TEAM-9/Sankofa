@@ -2,7 +2,7 @@ export default function MaskGroup() {
   return (
     <div className="relative size-full flex items-center justify-center" data-name="Mask group">
       <img
-        src="/logo.svg"
+        src="/logo.png"
         alt="Sankofa Logo"
         className="h-full w-full object-contain"
       />

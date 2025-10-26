@@ -191,7 +191,7 @@ export function VolunteerPage({ onNavigate }: VolunteerPageProps) {
                     </div>
                     
                     <Button
-                      onClick={(e) => {
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                         e.stopPropagation();
                         setSelectedOpportunity(opportunity.id);
                         document.getElementById('volunteer-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -228,7 +228,7 @@ export function VolunteerPage({ onNavigate }: VolunteerPageProps) {
                   <Label htmlFor="opportunity">Volunteer Opportunity *</Label>
                   <Select
                     value={selectedOpportunity || ''}
-                    onValueChange={(value) => setSelectedOpportunity(value)}
+                    onValueChange={(value: string) => setSelectedOpportunity(value)}
                   >
                     <SelectTrigger className="rounded-xl">
                       <SelectValue placeholder="Select an opportunity" />

@@ -1,4 +1,4 @@
-import { Button } from './ui/button';
+﻿import { Button } from './ui/button';
 import { HandCoins, Users, ArrowRight } from 'lucide-react';
 import { useAuth } from './AuthContext';
 
@@ -36,7 +36,7 @@ export function CTAButtons({ onNavigate, variant = 'hero' }: CTAButtonsProps) {
               size="lg"
               variant="outline"
               onClick={() => onNavigate('hub-manager')}
-              className="border-2 border-gray-300 hover:border-gray-400 rounded-full px-8 gap-2"
+              className="border border-gray-300 hover:border-gray-400 rounded-full px-8 gap-2"
             >
               <Users className="h-5 w-5" />
               Become a Hub Manager
@@ -52,7 +52,7 @@ export function CTAButtons({ onNavigate, variant = 'hero' }: CTAButtonsProps) {
       {isAuthenticated && user ? (
         <Button
           onClick={() => onNavigate(user.role === 'collector' ? 'collector' : 'hub-manager')}
-          className="bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full gap-2"
+          className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-full gap-2"
         >
           <Users className="h-4 w-4" />
           My Dashboard
@@ -69,7 +69,7 @@ export function CTAButtons({ onNavigate, variant = 'hero' }: CTAButtonsProps) {
           <Button
             variant="outline"
             onClick={() => onNavigate('hub-manager')}
-            className="border-2 border-gray-300 hover:border-gray-400 rounded-full gap-2"
+            className="border border-gray-300 hover:border-gray-400 rounded-full gap-2"
           >
             <Users className="h-4 w-4" />
             Become a Hub Manager

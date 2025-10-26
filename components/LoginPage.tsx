@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -77,7 +77,7 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
             </TabsTrigger>
             <TabsTrigger 
               value="hub-manager" 
-              className="gap-2 rounded-full data-[state=active]:bg-[#1a1a1a] data-[state=active]:text-white"
+              className="gap-12 rounded-full data-[state=active]:bg-[#1a1a1a] data-[state=active]:text-white"
             >
               <Building2 className="h-4 w-4" />
               Hub Manager

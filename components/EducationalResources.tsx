@@ -113,7 +113,7 @@ export function EducationalResources({ onNavigate }: EducationalResourcesProps) 
         </p>
         <Button
           onClick={() => onNavigate('contact')}
-          className="bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full px-8 gap-2"
+          className="bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-full px-8 gap-2"
         >
           Contact Us
           <ArrowRight className="h-4 w-4" />

@@ -1,4 +1,4 @@
-import { Card } from './ui/card';
+﻿import { Card } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { EducationalResources } from './EducationalResources';
 import { Heart, Target, Eye, Users, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -54,7 +54,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="text-6xl mb-6">🐦</div>
+              <div className="text-6xl mb-6">ðŸ¦</div>
               <h2 className="text-4xl text-gray-900 mb-4">What is Sankofa?</h2>
             </div>
 
@@ -210,7 +210,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                   <div className="text-sm text-gray-600">NHIS Enrollments</div>
                 </div>
                 <div className="bg-white rounded-3xl p-6 shadow-sm">
-                  <div className="text-3xl text-[#FBBF24] mb-2">GH₵1.2M</div>
+                  <div className="text-3xl text-[#FBBF24] mb-2">GHâ‚µ1.2M</div>
                   <div className="text-sm text-gray-600">Into Healthcare</div>
                 </div>
                 <div className="bg-white rounded-3xl p-6 shadow-sm">
@@ -248,7 +248,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               </button>
               <button
                 onClick={() => onNavigate('hub-manager')}
-                className="border-2 border-white text-white hover:bg-white hover:text-[#1a1a1a] px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
+                className="border border-white text-white hover:bg-white hover:text-[#1a1a1a] px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
               >
                 Become a Hub Manager
                 <ArrowRight className="h-4 w-4" />

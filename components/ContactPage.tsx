@@ -1,4 +1,4 @@
-import { Card } from './ui/card';
+﻿import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -53,15 +53,15 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     },
     {
       question: 'How much do you pay per kilogram of plastic?',
-      answer: 'Payment rates vary by plastic type and market conditions, but average GH₵1.80-2.50 per kilogram. Clean, sorted plastic earns higher rates. Remember, 70% is paid as instant cash and 30% saved as Health Tokens.',
+      answer: 'Payment rates vary by plastic type and market conditions, but average GHâ‚µ1.80-2.50 per kilogram. Clean, sorted plastic earns higher rates. Remember, 70% is paid as instant cash and 30% saved as Health Tokens.',
     },
     {
       question: 'Do I need a bank account to participate?',
-      answer: 'No! This is one of our core principles. You receive your 70% cash payment directly at the Hub—no bank account needed. Your 30% Health Tokens are tracked digitally and can be used without any banking infrastructure.',
+      answer: 'No! This is one of our core principles. You receive your 70% cash payment directly at the Hubâ€”no bank account needed. Your 30% Health Tokens are tracked digitally and can be used without any banking infrastructure.',
     },
     {
       question: 'What is the USSD/SMS system for feature phone users?',
-      answer: 'We provide full access via USSD (*800*726563#) and SMS (text to 2626) for those with basic mobile phones. You can check balances, find Hubs, get health tips, and more—no smartphone or internet required.',
+      answer: 'We provide full access via USSD (*800*726563#) and SMS (text to 2626) for those with basic mobile phones. You can check balances, find Hubs, get health tips, and moreâ€”no smartphone or internet required.',
     },
   ];
 
@@ -219,7 +219,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full gap-2"
+                    className="w-full bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-full gap-2"
                   >
                     <Send className="h-4 w-4" />
                     Send Message
@@ -284,7 +284,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                 onClick={() => onNavigate('hub-manager')}
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#1a1a1a] rounded-full px-8"
+                className="border border-white text-white hover:bg-white hover:text-[#1a1a1a] rounded-full px-8"
               >
                 Become a Hub Manager
               </Button>

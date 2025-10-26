@@ -1,4 +1,4 @@
-import { Card } from './ui/card';
+﻿import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight, ChevronRight } from 'lucide-react';
@@ -157,7 +157,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
             <div className="flex justify-center mt-16">
               <Button 
                 variant="outline" 
-                className="border-2 border-gray-300 rounded-full px-8 py-6 hover:border-gray-400"
+                className="border border-gray-300 rounded-full px-8 py-6 hover:border-gray-400"
               >
                 Load more
               </Button>
@@ -179,7 +179,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
                 variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-[#1a1a1a] rounded-full px-8 py-6"
+                className="border border-white text-white hover:bg-white hover:text-[#1a1a1a] rounded-full px-8 py-6"
                 onClick={() => onNavigate('contact')}
               >
                 Contact Us

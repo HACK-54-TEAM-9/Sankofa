@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -75,7 +75,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                   Welcome back, {user?.name}!
                 </h1>
                 <p className="text-lg text-gray-600">
-                  {stats.collectionsThisMonth} collections this month • Keep up the great work
+                  {stats.collectionsThisMonth} collections this month â€¢ Keep up the great work
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -89,7 +89,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                 <Button
                   onClick={() => onNavigate('messaging')}
                   variant="outline"
-                  className="border-2 border-gray-200 rounded-full px-6 hover:border-gray-300"
+                  className="border border-gray-200 rounded-full px-6 hover:border-gray-300"
                 >
                   Messages
                 </Button>
@@ -109,7 +109,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                   <Wallet className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-sm text-gray-500 mb-1">Total Earnings</p>
-                <div className="text-gray-900 mb-2">GH₵{stats.totalEarnings.toFixed(2)}</div>
+                <div className="text-gray-900 mb-2">GHâ‚µ{stats.totalEarnings.toFixed(2)}</div>
                 <div className="flex items-center gap-1 text-sm text-[#10b981]">
                   <TrendingUp className="h-3 w-3" />
                   <span>+18% this month</span>
@@ -121,7 +121,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                   <Calendar className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-sm text-gray-500 mb-1">This Month</p>
-                <div className="text-gray-900 mb-2">GH₵{stats.thisMonth.toFixed(2)}</div>
+                <div className="text-gray-900 mb-2">GHâ‚µ{stats.thisMonth.toFixed(2)}</div>
                 <p className="text-sm text-gray-500">{stats.collectionsThisMonth} collections</p>
               </Card>
 
@@ -139,7 +139,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                   <Heart className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-sm text-gray-500 mb-1">Health Impact</p>
-                <div className="text-gray-900 mb-2">GH₵{stats.healthcareContribution.toFixed(2)}</div>
+                <div className="text-gray-900 mb-2">GHâ‚µ{stats.healthcareContribution.toFixed(2)}</div>
                 <p className="text-sm text-gray-500">Healthcare funded</p>
               </Card>
             </div>
@@ -186,7 +186,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                           </div>
                         </div>
                         <div className="flex items-center gap-4 sm:flex-col sm:items-end">
-                          <div className="text-lg text-gray-900">GH₵{collection.earnings.toFixed(2)}</div>
+                          <div className="text-lg text-gray-900">GHâ‚µ{collection.earnings.toFixed(2)}</div>
                           <Badge
                             className={
                               collection.status === 'completed'
@@ -347,7 +347,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                 <Button
                   onClick={() => onNavigate('ai-assistant')}
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#10b981] rounded-full px-8"
+                  className="border border-white text-white hover:bg-white hover:text-[#10b981] rounded-full px-8"
                 >
                   Ask AI Assistant
                 </Button>

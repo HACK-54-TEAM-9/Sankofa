@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -6,7 +6,6 @@ import { Label } from './ui/label';
 import { Badge } from './ui/badge';
 import { Alert, AlertDescription } from './ui/alert';
 import { AIFloatingButton } from './AIFloatingButton';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { 
   MapPin, 
   Search, 
@@ -22,7 +21,6 @@ import {
   Navigation as NavigationIcon,
   Quote
 } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface LocationInsightsPageProps {
   onNavigate: (page: string) => void;
@@ -320,24 +318,18 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
       <section className="bg-black text-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <div
             >
               <p className="text-white/60 mb-4 uppercase tracking-wider">Community</p>
               <h1 className="mb-8 text-white">Health Intelligence</h1>
-            </motion.div>
+            </div>
 
             {/* Hero Image with Overlaid Text */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+            <div
               className="relative rounded-2xl overflow-hidden mb-12"
             >
               <div className="aspect-video relative">
-                <ImageWithFallback
+                <img
                   src="https://images.unsplash.com/photo-1584365132623-e273491c69d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
                   alt="Community health workers collaborating"
                   className="w-full h-full object-cover"
@@ -369,15 +361,12 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Statistics Section */}
             <div className="grid md:grid-cols-2 gap-12 mb-12">
               {/* Statistic 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+              <div
               >
                 <div className="h-1 w-32 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full mb-6" />
                 <div className="flex items-baseline gap-2 mb-4">
@@ -387,13 +376,10 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                 <p className="text-white/70 max-w-sm">
                   Communities struggle to track disease patterns and experience a lack of health data integration
                 </p>
-              </motion.div>
+              </div>
 
               {/* Statistic 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+              <div
               >
                 <div className="h-1 w-32 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-full mb-6" />
                 <div className="flex items-baseline gap-2 mb-4">
@@ -403,14 +389,11 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                 <p className="text-white/70 max-w-sm">
                   Communities struggle to improve health outcomes without personalized advice
                 </p>
-              </motion.div>
+              </div>
             </div>
 
             {/* Testimonial */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+            <div
               className="border-l-4 border-emerald-500 pl-8 py-4"
             >
               <Quote className="h-8 w-8 text-emerald-500 mb-4" />
@@ -418,7 +401,7 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                 Through AI-powered insights, we've gained valuable health intelligence that has led to a 40% improvement in disease prevention, enhancing community health and increasing access to healthcare.
               </p>
               <div className="flex items-center gap-4">
-                <ImageWithFallback
+                <img
                   src="https://images.unsplash.com/photo-1668752741330-8adc5cef7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100"
                   alt="Ama Darko"
                   className="w-12 h-12 rounded-full object-cover"
@@ -428,7 +411,7 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                   <p className="text-white/60 text-sm">Hub Manager</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -535,10 +518,7 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
 
                 <div className="grid md:grid-cols-2 gap-12 mb-16">
                   {/* Disease Reduction */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
+                  <div
                   >
                     <div className="h-1 w-32 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mb-6" />
                     <div className="flex items-baseline gap-2 mb-4">
@@ -548,13 +528,10 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                     <p className="text-white/70 text-lg max-w-sm">
                       Disease reduction in areas with active plastic collection and health monitoring
                     </p>
-                  </motion.div>
+                  </div>
 
                   {/* Community Engagement */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
+                  <div
                   >
                     <div className="h-1 w-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-6" />
                     <div className="flex items-baseline gap-2 mb-4">
@@ -564,7 +541,7 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                     <p className="text-white/70 text-lg max-w-sm">
                       Community members actively participate in health improvement initiatives
                     </p>
-                  </motion.div>
+                  </div>
                 </div>
 
                 {/* Key Metrics Grid */}
@@ -722,7 +699,7 @@ export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) 
                         {testimonial.quote}
                       </p>
                       <div className="flex items-center gap-4">
-                        <ImageWithFallback
+                        <img
                           src={testimonial.avatar}
                           alt={testimonial.author}
                           className="w-12 h-12 rounded-full object-cover"

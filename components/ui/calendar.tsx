@@ -59,16 +59,16 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={
-        {
-          IconLeft: ({ className, ...props }: { className?: string; [k: string]: any }) => (
-            <ChevronLeft className={cn("size-4", className)} {...props} />
-          ),
-          IconRight: ({ className, ...props }: { className?: string; [k: string]: any }) => (
-            <ChevronRight className={cn("size-4", className)} {...props} />
-          ),
-        } as any
-      }
+      components={{
+        // @ts-ignore - IconLeft/IconRight are valid DayPicker custom components
+        IconLeft: ({ className, ...props }: any) => (
+          <ChevronLeft className={cn("size-4", className)} {...props} />
+        ),
+        // @ts-ignore
+        IconRight: ({ className, ...props }: any) => (
+          <ChevronRight className={cn("size-4", className)} {...props} />
+        ),
+      }}
       {...props}
     />
   );

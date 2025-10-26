@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Heart, Users, Droplets, TrendingUp, CheckCircle2, ArrowRight, Gift, Shield } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
@@ -81,7 +81,7 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
     }
 
     // Simulate payment processing
-    toast.success(`Thank you for your ${donationType === 'monthly' ? 'monthly' : ''} donation of GH₵${amount}!`);
+    toast.success(`Thank you for your ${donationType === 'monthly' ? 'monthly' : ''} donation of GHâ‚µ${amount}!`);
     
     // Reset form
     setSelectedAmount('');
@@ -115,7 +115,7 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl text-gray-900 mb-2">GH₵847K</div>
+                <div className="text-3xl text-gray-900 mb-2">GHâ‚µ847K</div>
                 <div className="text-sm text-gray-600">Raised This Year</div>
               </div>
               <div className="text-center">
@@ -163,7 +163,7 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
                         <Icon className="h-6 w-6 text-[#10b981]" />
                       </div>
                       <div className="text-right">
-                        <div className="text-3xl text-gray-900">GH₵{tier.amount}</div>
+                        <div className="text-3xl text-gray-900">GHâ‚µ{tier.amount}</div>
                         <div className="text-sm text-gray-600">{donationType === 'monthly' ? '/month' : 'one-time'}</div>
                       </div>
                     </div>
@@ -188,9 +188,9 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
                         setSelectedAmount(tier.amount.toString());
                         document.getElementById('donation-form')?.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="w-full mt-6 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full"
+                      className="w-full mt-6 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-full"
                     >
-                      Donate GH₵{tier.amount}
+                      Donate GHâ‚µ{tier.amount}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Card>
@@ -223,7 +223,7 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
                     <button
                       type="button"
                       onClick={() => setDonationType('one-time')}
-                      className={`p-4 rounded-xl border-2 transition-all ${
+                      className={`p-4 rounded-xl border transition-all ${
                         donationType === 'one-time'
                           ? 'border-[#10b981] bg-[#10b981]/5'
                           : 'border-gray-200 hover:border-gray-300'
@@ -235,7 +235,7 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
                     <button
                       type="button"
                       onClick={() => setDonationType('monthly')}
-                      className={`p-4 rounded-xl border-2 transition-all ${
+                      className={`p-4 rounded-xl border transition-all ${
                         donationType === 'monthly'
                           ? 'border-[#10b981] bg-[#10b981]/5'
                           : 'border-gray-200 hover:border-gray-300'
@@ -249,13 +249,13 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
 
                 {/* Amount Selection */}
                 <div className="space-y-3">
-                  <Label>Donation Amount (GH₵)</Label>
+                  <Label>Donation Amount (GHâ‚µ)</Label>
                   <RadioGroup value={selectedAmount} onValueChange={setSelectedAmount}>
                     <div className="grid grid-cols-2 gap-3">
                       {[50, 100, 250, 500].map((amount) => (
                         <div
                           key={amount}
-                          className={`relative flex items-center space-x-2 p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                          className={`relative flex items-center space-x-2 p-4 rounded-xl border cursor-pointer transition-all ${
                             selectedAmount === amount.toString()
                               ? 'border-[#10b981] bg-[#10b981]/5'
                               : 'border-gray-200 hover:border-gray-300'
@@ -264,13 +264,13 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
                         >
                           <RadioGroupItem value={amount.toString()} id={`amount-${amount}`} />
                           <Label htmlFor={`amount-${amount}`} className="cursor-pointer flex-1">
-                            GH₵{amount}
+                            GHâ‚µ{amount}
                           </Label>
                         </div>
                       ))}
                     </div>
                     <div
-                      className={`relative flex items-center space-x-2 p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                      className={`relative flex items-center space-x-2 p-4 rounded-xl border cursor-pointer transition-all ${
                         selectedAmount === 'custom'
                           ? 'border-[#10b981] bg-[#10b981]/5'
                           : 'border-gray-200 hover:border-gray-300'
@@ -423,21 +423,21 @@ export function DonationsPage({ onNavigate }: DonationsPageProps) {
               <Button
                 onClick={() => onNavigate('volunteer')}
                 variant="outline"
-                className="rounded-full border-2 px-6"
+                className="rounded-full border px-6"
               >
                 Volunteer Your Time
               </Button>
               <Button
                 onClick={() => onNavigate('collector')}
                 variant="outline"
-                className="rounded-full border-2 px-6"
+                className="rounded-full border px-6"
               >
                 Become a Collector
               </Button>
               <Button
                 onClick={() => onNavigate('contact')}
                 variant="outline"
-                className="rounded-full border-2 px-6"
+                className="rounded-full border px-6"
               >
                 Corporate Partnership
               </Button>
