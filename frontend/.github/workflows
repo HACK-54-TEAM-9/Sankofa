@@ -1,1 +1,80 @@
+# Monorepo-aware CI: runs lint/typecheck/build/test for frontend, backend and root when present
+name: CI
 
+on:
+  push:
+    branches: [ main, frontend, backend ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build & Test - ${{ matrix.project }} (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [frontend, backend, root]
+        node: [18, 20]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Determine working directory
+        id: wd
+        run: |
+          if [ "${{ matrix.project }}" = "root" ]; then
+            echo "workdir=." >> $GITHUB_OUTPUT
+          else
+            echo "workdir=${{ matrix.project }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check project exists
+        id: check
+        run: |
+          if [ -f "${{ steps.wd.outputs.workdir }}/package.json" ]; then
+            echo "present=true" >> $GITHUB_OUTPUT
+          else
+            echo "present=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install dependencies
+        if: steps.check.outputs.present == 'true'
+        run: |
+          cd "${{ steps.wd.outputs.workdir }}"
+          if [ -f package-lock.json ]; then
+            npm ci --prefer-offline --no-audit --silent
+          else
+            npm install --prefer-offline --no-audit --silent
+          fi
+
+      - name: Run linter (if present)
+        if: steps.check.outputs.present == 'true'
+        run: |
+          cd "${{ steps.wd.outputs.workdir }}"
+          npm run lint --if-present
+
+      - name: Type-check (if present)
+        if: steps.check.outputs.present == 'true'
+        run: |
+          cd "${{ steps.wd.outputs.workdir }}"
+          npm run typecheck --if-present
+
+      - name: Build (if present)
+        if: steps.check.outputs.present == 'true'
+        run: |
+          cd "${{ steps.wd.outputs.workdir }}"
+          npm run build --if-present
+
+      - name: Test
+        if: steps.check.outputs.present == 'true'
+        run: |
+          cd "${{ steps.wd.outputs.workdir }}"
+          npm test --if-present
