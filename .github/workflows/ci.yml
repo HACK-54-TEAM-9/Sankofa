@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - frontend
+      - backend
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: CI - ${{ matrix.project }} (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [frontend, backend, root]
+        node-version: [18, 20]
+      fail-fast: false
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: |
+            ${{ matrix.project == 'root' && 'package-lock.json' || format('{0}/package-lock.json', matrix.project) }}
+
+      - name: Determine working directory
+        id: workdir
+        run: |
+          if [ "${{ matrix.project }}" = "root" ]; then
+            echo "path=." >> $GITHUB_OUTPUT
+          else
+            echo "path=${{ matrix.project }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for package.json
+        id: check_package
+        run: |
+          if [ -f "${{ steps.workdir.outputs.path }}/package.json" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "✅ package.json found in ${{ steps.workdir.outputs.path }}"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "⚠️  package.json not found in ${{ steps.workdir.outputs.path }}, skipping"
+          fi
+
+      - name: Check for lockfile
+        if: steps.check_package.outputs.exists == 'true'
+        id: check_lockfile
+        working-directory: ${{ steps.workdir.outputs.path }}
+        run: |
+          if [ -f "package-lock.json" ]; then
+            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
+            echo "install_cmd=npm ci" >> $GITHUB_OUTPUT
+          elif [ -f "yarn.lock" ]; then
+            echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
+            echo "install_cmd=yarn install --frozen-lockfile" >> $GITHUB_OUTPUT
+          elif [ -f "pnpm-lock.yaml" ]; then
+            echo "lockfile=pnpm-lock.yaml" >> $GITHUB_OUTPUT
+            echo "install_cmd=pnpm install --frozen-lockfile" >> $GITHUB_OUTPUT
+          else
+            echo "lockfile=none" >> $GITHUB_OUTPUT
+            echo "install_cmd=npm install" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install dependencies
+        if: steps.check_package.outputs.exists == 'true'
+        working-directory: ${{ steps.workdir.outputs.path }}
+        run: ${{ steps.check_lockfile.outputs.install_cmd }}
+
+      - name: Run lint
+        if: steps.check_package.outputs.exists == 'true'
+        working-directory: ${{ steps.workdir.outputs.path }}
+        run: npm run lint --if-present
+
+      - name: Run typecheck
+        if: steps.check_package.outputs.exists == 'true'
+        working-directory: ${{ steps.workdir.outputs.path }}
+        run: npm run typecheck --if-present
+
+      - name: Run build
+        if: steps.check_package.outputs.exists == 'true'
+        working-directory: ${{ steps.workdir.outputs.path }}
+        run: npm run build --if-present
+
+      - name: Run tests
+        if: steps.check_package.outputs.exists == 'true'
+        working-directory: ${{ steps.workdir.outputs.path }}
+        run: npm run test --if-present
