@@ -23,6 +23,7 @@ const donationRoutes = require('./routes/donations');
 const volunteerRoutes = require('./routes/volunteers');
 const analyticsRoutes = require('./routes/analytics');
 const paymentRoutes = require('./routes/payments');
+const messageRoutes = require('./routes/messages');
 
 // Import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -69,7 +70,12 @@ app.use(limiter);
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:3000'],
+  origin: process.env.CORS_ORIGIN?.split(',') || [
+    'http://localhost:3000',
+    'http://localhost:5173',  // Vite default port
+    'http://localhost:5174',  // Alternative Vite port
+    'http://localhost:4173',  // Vite preview port
+  ],
   credentials: true,
   optionsSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
@@ -112,6 +118,7 @@ app.use('/api/donations', donationRoutes);
 app.use('/api/volunteers', volunteerRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/payments', paymentRoutes);
+app.use('/api/messages', messageRoutes);
 
 // Socket.IO integration
 socketService.initialize(io);

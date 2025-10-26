@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { supabase } from '../utils/supabase/client';
 import { authAPI } from '../utils/api';
 
 export type UserRole = 'collector' | 'hub-manager' | null;
@@ -32,19 +31,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const { data: { session }, error } = await supabase.auth.getSession();
-        
-        if (error) {
-          console.error('Session check error:', error);
-          setLoading(false);
-          return;
-        }
+        // Check localStorage for saved token and user
+        const savedToken = localStorage.getItem('accessToken');
+        const savedUser = localStorage.getItem('user');
 
-        if (session?.access_token) {
-          // Fetch user profile from backend
-          const userData = await authAPI.getUser(session.access_token);
-          setUser(userData.user);
-          setAccessToken(session.access_token);
+        if (savedToken && savedUser) {
+          try {
+            // Verify token is still valid by fetching user profile
+            await authAPI.getUser(savedToken);
+            setUser(JSON.parse(savedUser));
+            setAccessToken(savedToken);
+          } catch (error) {
+            // Token is invalid, clear storage
+            console.error('Token validation failed:', error);
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('user');
+          }
         }
       } catch (error) {
         console.error('Error checking session:', error);
@@ -54,30 +56,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
 
     checkSession();
-
-    // Listen for auth state changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log('Auth state change:', event);
-      
-      if (session?.access_token) {
-        try {
-          const userData = await authAPI.getUser(session.access_token);
-          setUser(userData.user);
-          setAccessToken(session.access_token);
-        } catch (error) {
-          console.error('Error fetching user profile:', error);
-          setUser(null);
-          setAccessToken(null);
-        }
-      } else {
-        setUser(null);
-        setAccessToken(null);
-      }
-    });
-
-    return () => {
-      subscription.unsubscribe();
-    };
   }, []);
 
   const signup = async (
@@ -87,28 +65,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     role: UserRole
   ): Promise<{ success: boolean; error?: string }> => {
     try {
-      const response = await authAPI.signup({ email, password, name, role: role! });
-      
-      if (response.success) {
-        // After signup, sign in the user
-        const { data, error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
+      // Add phone number (required by backend)
+      const phone = `+233${Math.floor(200000000 + Math.random() * 100000000)}`;
 
-        if (error) {
-          return { success: false, error: error.message };
-        }
+      const response = await authAPI.signup({
+        email,
+        password,
+        name,
+        role: role!,
+        phone
+      });
 
-        if (data.session?.access_token) {
-          setUser(response.user);
-          setAccessToken(data.session.access_token);
-        }
-
-        return { success: true };
+      if (response.success && response.data) {
+        // After successful signup, automatically log in
+        return await login(email, password);
       }
 
-      return { success: false, error: response.error || 'Signup failed' };
+      return { success: false, error: response.message || 'Signup failed' };
     } catch (error: any) {
       console.error('Signup error:', error);
       return { success: false, error: error.message || 'Signup failed' };
@@ -117,38 +90,56 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (email: string, password: string): Promise<{ success: boolean; error?: string }> => {
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
+      // Use backend API for login instead of Supabase Auth
+      const response = await authAPI.login({ email, password });
 
-      if (error) {
-        return { success: false, error: error.message };
+      if (response.success && response.data) {
+        const { user, accessToken } = response.data;
+        setUser({
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role as UserRole
+        });
+        setAccessToken(accessToken);
+
+        // Store token in localStorage for persistence
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('user', JSON.stringify({
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role
+        }));
+
+        return { success: true };
       }
 
-      if (data.session?.access_token) {
-        try {
-          const userData = await authAPI.getUser(data.session.access_token);
-          setUser(userData.user);
-          setAccessToken(data.session.access_token);
-          return { success: true };
-        } catch (err: any) {
-          return { success: false, error: err.message || 'Failed to fetch user profile' };
-        }
-      }
-
-      return { success: false, error: 'Login failed' };
+      return { success: false, error: response.message || 'Login failed' };
     } catch (error: any) {
       console.error('Login error:', error);
-      return { success: false, error: error.message || 'Login failed' };
+      return { success: false, error: error.message || 'Invalid credentials' };
     }
   };
 
   const logout = async () => {
     try {
-      await supabase.auth.signOut();
+      // Clear local state
       setUser(null);
       setAccessToken(null);
+
+      // Clear localStorage
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('user');
+
+      // Optionally call backend logout endpoint
+      if (accessToken) {
+        try {
+          await authAPI.logout(accessToken);
+        } catch (error) {
+          console.error('Backend logout error:', error);
+        }
+      }
     } catch (error) {
       console.error('Logout error:', error);
     }

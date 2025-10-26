@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API Connection</title>
+</head>
+<body>
+    <h1>Test API Connection</h1>
+    <button onclick="testHealth()">Test Health Endpoint</button>
+    <button onclick="testLogin()">Test Login</button>
+    <pre id="output"></pre>
+
+    <script>
+        const API_URL = 'http://localhost:6000';
+        const output = document.getElementById('output');
+
+        async function testHealth() {
+            output.textContent = 'Testing health endpoint...\n';
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                const data = await response.json();
+                output.textContent += 'SUCCESS!\n' + JSON.stringify(data, null, 2);
+            } catch (error) {
+                output.textContent += 'ERROR: ' + error.message;
+            }
+        }
+
+        async function testLogin() {
+            output.textContent = 'Testing login endpoint...\n';
+            try {
+                const response = await fetch(`${API_URL}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: 'collector@demo.com',
+                        password: 'demo123'
+                    })
+                });
+                const data = await response.json();
+                output.textContent += `Status: ${response.status}\n`;
+                output.textContent += JSON.stringify(data, null, 2);
+            } catch (error) {
+                output.textContent += 'ERROR: ' + error.message + '\n';
+                output.textContent += 'This usually means CORS is blocking the request or backend is not running.';
+            }
+        }
+    </script>
+</body>
+</html>

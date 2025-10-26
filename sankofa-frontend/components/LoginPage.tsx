@@ -367,7 +367,7 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
                     size="lg"
                     variant="outline"
                     onClick={() => {
-                      setEmail('manager@demo.com');
+                      setEmail('hubmanager@demo.com');
                       setPassword('demo123');
                     }}
                     disabled={isLoading}

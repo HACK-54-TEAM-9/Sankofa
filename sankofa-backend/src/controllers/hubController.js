@@ -207,6 +207,401 @@ const getHubAnalytics = asyncHandler(async (req, res) => {
   });
 });
 
+// @desc    Get hub dashboard data
+// @route   GET /api/hubs/:id/dashboard
+// @access  Private (Hub Manager, Admin)
+const getHubDashboard = async (req, res) => {
+  const hubId = req.params.id;
+  const { supabase } = require('../config/supabase');
+
+  // Get hub details
+  const { data: hub, error: hubError } = await supabase
+    .from('hubs')
+    .select('*')
+    .eq('id', hubId)
+    .single();
+
+  if (hubError || !hub) {
+    return res.status(404).json({
+      success: false,
+      message: 'Hub not found'
+    });
+  }
+
+  // Get today's collections count
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const { count: todayCount } = await supabase
+    .from('collections')
+    .select('*', { count: 'exact', head: true })
+    .eq('hub', hubId)
+    .gte('created_at', today.toISOString());
+
+  // Get weekly collections
+  const weekAgo = new Date();
+  weekAgo.setDate(weekAgo.getDate() - 7);
+
+  const { count: weeklyCount } = await supabase
+    .from('collections')
+    .select('*', { count: 'exact', head: true })
+    .eq('hub', hubId)
+    .gte('created_at', weekAgo.toISOString());
+
+  // Get monthly collections
+  const monthAgo = new Date();
+  monthAgo.setMonth(monthAgo.getMonth() - 1);
+
+  const { count: monthlyCount } = await supabase
+    .from('collections')
+    .select('*', { count: 'exact', head: true })
+    .eq('hub', hubId)
+    .gte('created_at', monthAgo.toISOString());
+
+  // Get active collectors (collected in last 30 days)
+  const { data: activeCollectors } = await supabase
+    .from('collections')
+    .select('collector')
+    .eq('hub', hubId)
+    .gte('created_at', monthAgo.toISOString());
+
+  const uniqueCollectors = [...new Set(activeCollectors?.map(c => c.collector))];
+
+  // Get pending verifications
+  const { count: pendingCount } = await supabase
+    .from('collections')
+    .select('*', { count: 'exact', head: true })
+    .eq('hub', hubId)
+    .eq('status', 'pending');
+
+  // Get top collectors
+  const { data: topCollectors } = await supabase
+    .from('collections')
+    .select('collector, collector:users(name, email)')
+    .eq('hub', hubId)
+    .gte('created_at', monthAgo.toISOString())
+    .limit(10);
+
+  // Get recent transactions
+  const { data: recentTransactions } = await supabase
+    .from('collections')
+    .select('*, collector:users(name, email)')
+    .eq('hub', hubId)
+    .order('created_at', { ascending: false })
+    .limit(10);
+
+  res.status(200).json({
+    success: true,
+    data: {
+      hub,
+      stats: {
+        todayCollections: todayCount || 0,
+        weeklyCollections: weeklyCount || 0,
+        monthlyCollections: monthlyCount || 0,
+        activeCollectors: uniqueCollectors.length,
+        pendingVerifications: pendingCount || 0
+      },
+      topCollectors: topCollectors || [],
+      recentTransactions: recentTransactions || []
+    }
+  });
+};
+
+// @desc    Get pending collections for verification
+// @route   GET /api/hubs/:id/pending-collections
+// @access  Private (Hub Manager, Admin)
+const getPendingCollections = async (req, res) => {
+  const hubId = req.params.id;
+  const { supabase } = require('../config/supabase');
+
+  const { data: collections, error } = await supabase
+    .from('collections')
+    .select('*, collector:users(name, email, phone)')
+    .eq('hub', hubId)
+    .eq('status', 'pending')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Error fetching pending collections',
+      error: error.message
+    });
+  }
+
+  res.status(200).json({
+    success: true,
+    count: collections.length,
+    data: collections
+  });
+};
+
+// @desc    Search for collector by phone number
+// @route   GET /api/hubs/:id/search-collector?phone=xxx
+// @access  Private (Hub Manager, Admin)
+const searchCollector = async (req, res) => {
+  const { phone } = req.query;
+  const { supabase } = require('../config/supabase');
+
+  if (!phone) {
+    return res.status(400).json({
+      success: false,
+      message: 'Phone number is required'
+    });
+  }
+
+  const { data: collectors, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('role', 'collector')
+    .eq('phone', phone);
+
+  if (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Error searching for collector',
+      error: error.message
+    });
+  }
+
+  res.status(200).json({
+    success: true,
+    found: collectors && collectors.length > 0,
+    data: collectors && collectors.length > 0 ? collectors[0] : null
+  });
+};
+
+// @desc    Register new collector (simple)
+// @route   POST /api/hubs/:id/register-collector
+// @access  Private (Hub Manager, Admin)
+const registerCollector = async (req, res) => {
+  const { phone, name, neighborhood } = req.body;
+  const hubId = req.params.id;
+  const { supabase } = require('../config/supabase');
+
+  // Check if collector already exists
+  const { data: existing } = await supabase
+    .from('users')
+    .select('*')
+    .eq('phone', phone)
+    .eq('role', 'collector')
+    .single();
+
+  if (existing) {
+    return res.status(400).json({
+      success: false,
+      message: 'Collector with this phone number already exists'
+    });
+  }
+
+  // Create collector account
+  const { data: collector, error } = await supabase
+    .from('users')
+    .insert([{
+      name,
+      phone,
+      email: `${phone}@sankofa.placeholder`, // Placeholder email
+      role: 'collector',
+      neighborhood,
+      registered_by_hub: hubId,
+      created_at: new Date().toISOString()
+    }])
+    .select()
+    .single();
+
+  if (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Error registering collector',
+      error: error.message
+    });
+  }
+
+  res.status(201).json({
+    success: true,
+    message: 'Collector registered successfully',
+    data: collector
+  });
+};
+
+// @desc    Register new collector (full details)
+// @route   POST /api/hubs/:id/register-collector-full
+// @access  Private (Hub Manager, Admin)
+const registerCollectorFull = async (req, res) => {
+  const {
+    cardNumber,
+    fullName,
+    phoneNumber,
+    hasPhone,
+    emergencyContact,
+    neighborhood,
+    landmark,
+    preferredLanguage,
+    canRead,
+    photo,
+    physicalIdNumber,
+    notes
+  } = req.body;
+
+  const hubId = req.params.id;
+  const { supabase } = require('../config/supabase');
+
+  // Check if collector already exists (by phone or card number)
+  if (phoneNumber) {
+    const { data: existing } = await supabase
+      .from('users')
+      .select('*')
+      .eq('phone', phoneNumber)
+      .eq('role', 'collector')
+      .single();
+
+    if (existing) {
+      return res.status(400).json({
+        success: false,
+        message: 'Collector with this phone number already exists'
+      });
+    }
+  }
+
+  // Create collector account with full details
+  const { data: collector, error } = await supabase
+    .from('users')
+    .insert([{
+      name: fullName,
+      phone: phoneNumber || null,
+      email: phoneNumber ? `${phoneNumber}@sankofa.placeholder` : `${cardNumber}@sankofa.placeholder`,
+      role: 'collector',
+      card_number: cardNumber,
+      has_phone: hasPhone,
+      emergency_contact: emergencyContact,
+      neighborhood,
+      landmark,
+      preferred_language: preferredLanguage,
+      can_read: canRead === 'yes',
+      photo,
+      physical_id_number: physicalIdNumber,
+      notes,
+      registered_by_hub: hubId,
+      registration_date: new Date().toISOString(),
+      created_at: new Date().toISOString()
+    }])
+    .select()
+    .single();
+
+  if (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Error registering collector',
+      error: error.message
+    });
+  }
+
+  res.status(201).json({
+    success: true,
+    message: 'Collector registered successfully with full details',
+    data: collector
+  });
+};
+
+// @desc    Process collection transaction
+// @route   POST /api/hubs/:id/transactions
+// @access  Private (Hub Manager, Admin)
+const processTransaction = async (req, res) => {
+  const {
+    collectorId,
+    collectorPhone,
+    plasticType,
+    weight,
+    location,
+    totalValue,
+    instantCash,
+    savingsToken
+  } = req.body;
+
+  const hubId = req.params.id;
+  const { supabase } = require('../config/supabase');
+
+  // Verify collector exists
+  const { data: collector, error: collectorError } = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', collectorId)
+    .eq('role', 'collector')
+    .single();
+
+  if (collectorError || !collector) {
+    return res.status(404).json({
+      success: false,
+      message: 'Collector not found'
+    });
+  }
+
+  // Create collection record
+  const { data: collection, error: collectionError } = await supabase
+    .from('collections')
+    .insert([{
+      collector: collectorId,
+      hub: hubId,
+      plastic_type: plasticType,
+      weight: weight,
+      quantity: 1,
+      collection_location: location ? {
+        type: 'Point',
+        coordinates: [location.longitude, location.latitude]
+      } : null,
+      status: 'verified',
+      verified_by: req.user.id,
+      verified_at: new Date().toISOString(),
+      created_at: new Date().toISOString()
+    }])
+    .select()
+    .single();
+
+  if (collectionError) {
+    return res.status(500).json({
+      success: false,
+      message: 'Error creating collection record',
+      error: collectionError.message
+    });
+  }
+
+  // Create payment/transaction record
+  const { data: payment, error: paymentError } = await supabase
+    .from('payments')
+    .insert([{
+      user_id: collectorId,
+      collection_id: collection.id,
+      amount: totalValue,
+      instant_cash: instantCash,
+      health_tokens: savingsToken,
+      status: 'completed',
+      payment_method: 'cash',
+      created_at: new Date().toISOString()
+    }])
+    .select()
+    .single();
+
+  if (paymentError) {
+    // Rollback collection if payment fails
+    await supabase.from('collections').delete().eq('id', collection.id);
+
+    return res.status(500).json({
+      success: false,
+      message: 'Error processing payment',
+      error: paymentError.message
+    });
+  }
+
+  res.status(201).json({
+    success: true,
+    message: 'Transaction processed successfully',
+    data: {
+      collection,
+      payment
+    }
+  });
+};
+
 module.exports = {
   getHubs,
   getHubById,
@@ -219,5 +614,11 @@ module.exports = {
   updateHubStatus,
   getHubCollectors,
   getHubCollections,
-  getHubAnalytics
+  getHubAnalytics,
+  getHubDashboard,
+  getPendingCollections,
+  searchCollector,
+  registerCollector,
+  registerCollectorFull,
+  processTransaction
 };
