@@ -10,7 +10,8 @@ const {
   changePassword,
   getUserStats,
   getTopUsers,
-  getUserActivity
+  getUserActivity,
+  getCollectorDashboard
 } = require('../controllers/userController');
 const { protect, authorize } = require('../middleware/auth');
 const { asyncHandler } = require('../middleware/errorHandler');
@@ -45,6 +46,9 @@ const passwordChangeValidation = [
 
 // All routes are protected
 router.use(protect);
+
+// Collector-specific routes
+router.get('/collector/dashboard', asyncHandler(getCollectorDashboard));
 
 // User management routes
 router.get('/', authorize('admin'), asyncHandler(getUsers));

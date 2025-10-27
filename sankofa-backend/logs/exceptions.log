@@ -682,3 +682,35 @@
 [31m    at listenInCluster (node:net:1996:12)[39m
 [31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
 [31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 04:45:53:4553 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31m/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50[39m
+[31m        throw new Error('supabaseUrl is required.');[39m
+[31m        ^[39m
+
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-27 06:02:57:257 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31m/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50[39m
+[31m        throw new Error('supabaseUrl is required.');[39m
+[31m        ^[39m
+
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m

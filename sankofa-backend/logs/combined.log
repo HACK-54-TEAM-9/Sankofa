@@ -1202,3 +1202,148 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:19:51:48 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 401 76 \"http://localhost:5174/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-26 19:51:48:5148"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: email@email.com\u001b[39m","timestamp":"2025-10-26 19:51:48:5148"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:19:51:48 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 401 76 \"http://localhost:5174/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-26 19:51:48:5148"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-26 22:59:13:5913"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-26 22:59:13:5913"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-26 22:59:21:5921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 23:03:42:342"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 23:03:44:344"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:23:03:44 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-26 23:03:44:344"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 23:03:45:345"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:23:03:45 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 404 76 \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-26 23:03:45:345"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-26 23:03:45:345"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [26/Oct/2025:23:03:45 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 404 76 \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-26 23:03:45:345"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-27 04:42:21:4221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-27 04:42:21:4221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-27 04:42:23:4223"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:04:42:43 +0000] \"GET /health HTTP/1.1\" 200 122 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 04:42:43:4243"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mMissing required Supabase environment variables\u001b[39m","timestamp":"2025-10-27 04:45:53:4553"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-27 05:16:21:1621"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-27 05:16:21:1621"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-27 05:16:22:1622"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 05:19:04:194"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 05:19:06:196"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:19:06 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1145 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 05:19:06:196"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 05:19:32:1932"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 05:19:34:1934"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:19:34 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1146 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 05:19:34:1934"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:30:01:301"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:30:02 +0000] \"GET /api/auth/me HTTP/1.1\" 200 845 \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:30:02:302"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:30:02:302"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:30:03 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:30:03:303"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:30:32:3032"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:30:33 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 404 76 \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:30:33:3033"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:30:33:3033"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:30:33 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 404 76 \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:30:33:3033"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:31:35:3135"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:31:36 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:31:36:3136"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:31:36:3136"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:31:39 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:31:39:3139"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:32:20:3220"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:32:21 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 404 76 \"http://localhost:5173/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:32:21:3221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 05:32:21:3221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:32:21 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 404 76 \"http://localhost:5173/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 05:32:21:3221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-27 05:50:33:5033"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-27 05:50:33:5033"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-27 05:50:35:5035"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 05:55:36:5536"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 05:55:41:5541"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:55:41 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1404 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 05:55:41:5541"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:05:55:41 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 401 51 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 05:55:41:5541"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:01:53:153"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:01:54 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 401 76 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:01:54:154"}
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mMissing required Supabase environment variables\u001b[39m","timestamp":"2025-10-27 06:02:57:257"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:10:10:1010"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:10:13:1013"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:10:13 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1403 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:10:13:1013"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:10:13 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 401 51 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:10:13:1013"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:10:28:1028"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:10:30:1030"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:10:30 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1404 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:10:30:1030"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:10:30:1030"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:10:31:1031"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:10:31 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1404 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:10:31:1031"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:10:42:1042"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:10:43 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 404 336 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:10:43:1043"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-27 06:11:23:1123"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-27 06:11:24:1124"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:11:39:1139"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:11:41:1141"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:11:41 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1403 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:11:41:1141"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:11:41 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 401 51 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:11:41:1141"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:32:41:3241"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: collector@demo.com\u001b[39m","timestamp":"2025-10-27 06:32:43:3243"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:06:32:43 +0000] \"POST /api/auth/login HTTP/1.1\" 200 1404 \"-\" \"curl/8.5.0\"\u001b[39m","timestamp":"2025-10-27 06:32:43:3243"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mReceived SIGTERM. Starting graceful shutdown...\u001b[39m","timestamp":"2025-10-27 06:35:08:358"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-27 08:48:57:4857"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-27 08:48:57:4857"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-27 08:48:59:4859"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mLogin attempt for: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:49:17:4917"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mUser logged in successfully: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:49:19:4919"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:08:49:19 +0000] \"POST /api/auth/login HTTP/1.1\" 200 - \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 08:49:19:4919"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:49:20:4920"}
+{"code":"42703","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError fetching collections: column collections.user_id does not exist\u001b[39m","timestamp":"2025-10-27 08:49:20:4920"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:08:49:20 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 200 84 \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 08:49:20:4920"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:49:20:4920"}
+{"code":"42703","details":null,"hint":null,"level":"\u001b[31merror\u001b[39m","message":"\u001b[31mError fetching collections: column collections.user_id does not exist\u001b[39m","timestamp":"2025-10-27 08:49:21:4921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:08:49:21 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 304 - \"http://localhost:5173/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 08:49:21:4921"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mSocket.IO service initialized\u001b[39m","timestamp":"2025-10-27 08:50:53:5053"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mStarting server with Supabase database integration\u001b[39m","timestamp":"2025-10-27 08:50:53:5053"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase connection successful\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase database connected successfully\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33mRedis connection disabled for development - caching will be skipped\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 Sankofa-Coin Backend Server running on localhost:5000\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔗 Health check: http://localhost:5000/health\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase (PostgreSQL)\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m⚠️  Development mode: SMS and Email services are disabled\u001b[39m","timestamp":"2025-10-27 08:50:54:5054"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:55:37:5537"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:08:55:39 +0000] \"GET /api/auth/me HTTP/1.1\" 200 851 \"http://localhost:5173/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 08:55:39:5539"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:55:39:5539"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:08:55:40 +0000] \"GET /api/auth/me HTTP/1.1\" 304 - \"http://localhost:5173/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 08:55:40:5540"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:56:04:564"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:08:56:06 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 200 - \"http://localhost:5173/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 08:56:06:566"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mToken verified for user: kwame.mensah@example.com\u001b[39m","timestamp":"2025-10-27 08:56:06:566"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m127.0.0.1 - - [27/Oct/2025:08:56:06 +0000] \"GET /api/users/collector/dashboard HTTP/1.1\" 304 - \"http://localhost:5173/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36\"\u001b[39m","timestamp":"2025-10-27 08:56:06:566"}

@@ -1,10 +1,12 @@
 const crypto = require('crypto');
+const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const { AppError, asyncHandler } = require('../middleware/errorHandler');
 const { sendEmail } = require('../services/emailService');
 const { sendSMS } = require('../services/smsService');
 const logger = require('../utils/logger');
 const { supabase, supabaseAdmin } = require('../config/supabase');
+const generateToken = require('../utils/generateToken');
 
 // @desc    Register user
 // @route   POST /api/auth/register
@@ -24,54 +26,50 @@ const register = asyncHandler(async (req, res) => {
     throw new AppError('User with this phone number already exists', 400);
   }
 
-  // Use Supabase Auth to create user
-  const { data: authData, error: authError } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      data: {
-        name,
-        phone,
-        role: role || 'collector'
-      }
-    }
-  });
-
-  if (authError) {
-    throw new AppError(authError.message, 400);
-  }
+  // Hash password using bcrypt
+  const saltRounds = 12;
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
 
   // Create user profile in our users table
   const user = await User.create({
-    id: authData.user.id,
     name,
     email,
     phone,
+    password: hashedPassword,
     role: role || 'collector',
     is_email_verified: false,
-    is_phone_verified: false
+    is_phone_verified: false,
+    status: 'active' // Auto-activate for demo purposes
   });
 
-  // Send phone verification code
+  // Send phone verification code (optional - don't fail if SMS service is down)
   try {
     const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
-    await user.update({ phoneVerificationCode: verificationCode });
+    // Store verification code (you'd need to add this field to User model)
+    // await user.update({ phone_verification_code: verificationCode });
 
     await sendSMS({
       to: user.phone,
-      message: `Your Sankofa-Coin verification code is: ${verificationCode}. Valid for 10 minutes.`
+      message: `Your Sankofa verification code is: ${verificationCode}. Valid for 10 minutes.`
     });
   } catch (error) {
-    logger.error('SMS verification send failed:', error);
+    logger.warn('SMS verification send failed:', error.message);
     // Don't fail registration if SMS fails
   }
 
+  // Generate JWT tokens
+  const accessToken = generateToken(user.id, user.email, user.role, '7d');
+  const refreshToken = generateToken(user.id, user.email, user.role, '30d');
+
+  logger.info('User registered successfully', { userId: user.id, email: user.email, role: user.role });
+
   res.status(201).json({
     success: true,
-    message: 'User registered successfully. Please check your email for verification and verify your phone number.',
+    message: 'User registered successfully.',
     data: {
       user: user.toPublicProfile(),
-      session: authData.session
+      accessToken,
+      refreshToken
     }
   });
 });
@@ -82,37 +80,41 @@ const register = asyncHandler(async (req, res) => {
 const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  // Use Supabase Auth to sign in
-  const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
-    email,
-    password
-  });
+  // Find user by email
+  const user = await User.findByEmail(email);
 
-  if (authError) {
+  if (!user) {
     throw new AppError('Invalid email or password', 401);
   }
 
-  // Get user profile from our users table
-  const user = await User.findById(authData.user.id);
+  // Verify password using bcrypt
+  const isPasswordValid = await bcrypt.compare(password, user.password);
 
-  if (!user) {
-    throw new AppError('User profile not found', 404);
+  if (!isPasswordValid) {
+    throw new AppError('Invalid email or password', 401);
   }
 
   // Check if user is active
-  if (user.status !== 'active') {
+  if (user.status !== 'active' && user.status !== 'pending') {
     throw new AppError('Account is not active. Please contact support.', 401);
   }
 
   // Update last login
   await user.updateLastLogin();
 
+  // Generate JWT tokens
+  const accessToken = generateToken(user.id, user.email, user.role, '7d');
+  const refreshToken = generateToken(user.id, user.email, user.role, '30d');
+
+  logger.info('User logged in successfully', { userId: user.id, email: user.email });
+
   res.json({
     success: true,
     message: 'Login successful',
     data: {
       user: user.toPublicProfile(),
-      session: authData.session
+      accessToken,
+      refreshToken
     }
   });
 });

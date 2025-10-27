@@ -14,6 +14,7 @@ class User {
     this.profile = data.profile || {};
     this.location = data.location || {};
     this.healthTokens = data.health_tokens || 0;
+    this.savingsTokens = data.savings_tokens || 0;
     this.totalEarnings = data.total_earnings || 0;
     this.totalCollections = data.total_collections || 0;
     this.totalWeight = data.total_weight || 0;
@@ -21,6 +22,19 @@ class User {
     this.lastLoginAt = data.last_login_at;
     this.createdAt = data.created_at;
     this.updatedAt = data.updated_at;
+
+    // Low-tech/illiterate collector support fields
+    this.cardNumber = data.card_number;
+    this.hasPhone = data.has_phone;
+    this.emergencyContact = data.emergency_contact;
+    this.landmark = data.landmark;
+    this.preferredLanguage = data.preferred_language || 'english';
+    this.canRead = data.can_read;
+    this.physicalIdNumber = data.physical_id_number;
+    this.collectorNotes = data.collector_notes;
+    this.registeredBy = data.registered_by;
+    this.registrationDate = data.registration_date;
+    this.neighborhood = data.neighborhood;
   }
 
   // Create a new user
@@ -388,6 +402,7 @@ class User {
   toPublicProfile() {
     return {
       id: this.id,
+      email: this.email,
       name: this.name,
       role: this.role,
       totalCollections: this.totalCollections,

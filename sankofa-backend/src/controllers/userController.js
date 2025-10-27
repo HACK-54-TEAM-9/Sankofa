@@ -196,6 +196,40 @@ const getUserActivity = asyncHandler(async (req, res) => {
   });
 });
 
+// @desc    Get collector dashboard data
+// @route   GET /api/users/collector/dashboard
+// @access  Private (Collector)
+const getCollectorDashboard = asyncHandler(async (req, res) => {
+  // req.user is already populated by the auth middleware
+  const user = req.user;
+
+  if (user.role !== 'collector') {
+    throw new AppError('Access denied. This endpoint is for collectors only.', 403);
+  }
+
+  // Get recent collections for this collector
+  const { supabaseAdmin } = require('../config/supabase');
+  const { data: collections, error } = await supabaseAdmin
+    .from('collections')
+    .select('*')
+    .eq('collector_id', user.id)
+    .order('created_at', { ascending: false })
+    .limit(10);
+
+  if (error) {
+    logger.error('Error fetching collections:', error);
+  }
+
+  // Return dashboard data matching edge function format
+  res.json({
+    totalCollections: user.total_collections || 0,
+    totalKg: parseFloat(user.total_weight) || 0,
+    earningsGHS: parseFloat(user.total_earnings) || 0,
+    healthPoints: user.health_tokens || 0,
+    collections: collections || []
+  });
+});
+
 module.exports = {
   getUsers,
   getUserById,
@@ -206,5 +240,6 @@ module.exports = {
   changePassword,
   getUserStats,
   getTopUsers,
-  getUserActivity
+  getUserActivity,
+  getCollectorDashboard
 };
