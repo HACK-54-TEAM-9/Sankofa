@@ -1,0 +1,1138 @@
+2025-10-25 19:11:50:1150 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:12:04:124 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:12:16:1216 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31m/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71[39m
+[31m                throw new Error("accountSid must start with AC" + apiKeyMsg);[39m
+[31m                ^[39m
+
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:12:47:1247 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:15:59:1559 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:29:30:2930 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:31:38:3138 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:32:19:3219 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:32:46:3246 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:33:06:336 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:33:34:3334 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31m/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71[39m
+[31m                throw new Error("accountSid must start with AC" + apiKeyMsg);[39m
+[31m                ^[39m
+
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:33:55:3355 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:34:40:3440 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:34:55:3455 [31merror[39m: [31muncaughtException: accountSid must start with AC[39m
+[31mError: accountSid must start with AC[39m
+[31m    at new Client (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)[39m
+[31m    at new Twilio (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)[39m
+[31m    at TwilioSDK (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/twilio/lib/index.js:40:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/services/smsService.js:5:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 19:36:03:363 [31merror[39m: [31muncaughtException: app.use() requires a middleware function[39m
+[31mTypeError: app.use() requires a middleware function[39m
+[31m    at app.use (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/express/lib/application.js:217:11)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:117:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)[39m
+[31m    at node:internal/main/run_main_module:33:47[39m
+2025-10-25 19:36:25:3625 [31merror[39m: [31muncaughtException: app.use() requires a middleware function[39m
+[31mTypeError: app.use() requires a middleware function[39m
+[31m    at app.use (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/express/lib/application.js:217:11)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:117:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)[39m
+[31m    at node:internal/main/run_main_module:33:47[39m
+2025-10-25 19:36:32:3632 [31merror[39m: [31muncaughtException: app.use() requires a middleware function[39m
+[31mTypeError: app.use() requires a middleware function[39m
+[31m    at app.use (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/express/lib/application.js:217:11)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:117:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)[39m
+[31m    at node:internal/main/run_main_module:33:47[39m
+2025-10-25 19:37:12:3712 [31merror[39m: [31muncaughtException: app.use() requires a middleware function[39m
+[31mTypeError: app.use() requires a middleware function[39m
+[31m    at app.use (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/express/lib/application.js:217:11)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:117:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)[39m
+[31m    at node:internal/main/run_main_module:33:47[39m
+2025-10-25 19:40:17:4017 [31merror[39m: [31muncaughtException: app.use() requires a middleware function[39m
+[31mTypeError: app.use() requires a middleware function[39m
+[31m    at app.use (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/express/lib/application.js:217:11)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:117:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)[39m
+[31m    at node:internal/main/run_main_module:33:47[39m
+2025-10-25 19:42:48:4248 [31merror[39m: [31muncaughtException: app.use() requires a middleware function[39m
+[31mTypeError: app.use() requires a middleware function[39m
+[31m    at app.use (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/express/lib/application.js:217:11)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:117:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)[39m
+[31m    at node:internal/main/run_main_module:33:47[39m
+2025-10-25 19:44:19:4419 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 21:19:16:1916 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 21:19:22:1922 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 21:19:30:1930 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 21:20:41:2041 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 21:23:39:2339 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 21:29:49:2949 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 21:30:44:3044 [31merror[39m: [31muncaughtException: mongoose is not defined[39m
+[31mReferenceError: mongoose is not defined[39m
+[31m    at Server.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:176:5)[39m
+[31m    at Object.onceWrapper (node:events:621:28)[39m
+[31m    at Server.emit (node:events:519:35)[39m
+[31m    at emitCloseNT (node:net:2418:8)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m
+2025-10-25 21:44:52:4452 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 21:49:53:4953 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 21:50:51:5051 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-25 22:02:20:220 [31merror[39m: [31muncaughtException: mongoose is not defined[39m
+[31mReferenceError: mongoose is not defined[39m
+[31m    at Server.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:176:5)[39m
+[31m    at Object.onceWrapper (node:events:621:28)[39m
+[31m    at Server.emit (node:events:519:35)[39m
+[31m    at emitCloseNT (node:net:2418:8)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m
+2025-10-25 22:03:13:313 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 22:11:37:1137 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 22:11:57:1157 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 22:12:24:1224 [31merror[39m: [31muncaughtException: Unexpected token '*'[39m
+[31m/home/gideon-nyarko/Downloads/Projects/Backend/src/middleware/supabaseAuth.js:168[39m
+[31m * Middleware to check if user has specific role[39m
+[31m ^[39m
+
+[31mSyntaxError: Unexpected token '*'[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1666:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1708:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/routes/auth.js:20:34)[39m
+2025-10-25 22:12:40:1240 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 22:12:47:1247 [31merror[39m: [31muncaughtException: refreshTokenMiddleware is not defined[39m
+[31mReferenceError: refreshTokenMiddleware is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/routes/auth.js:106:31)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Backend/src/server.js:14:20)[39m
+2025-10-25 22:12:58:1258 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 22:16:45:1645 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 22:19:13:1913 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-25 22:19:23:1923 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 06:15:11:1511 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31m/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50[39m
+[31m        throw new Error('supabaseUrl is required.');[39m
+[31m        ^[39m
+
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js:50:15)[39m
+[31m    at new SupabaseClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:34:59)[39m
+[31m    at createClient (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/config/supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-26 06:32:09:329 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 06:35:42:3542 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:38:00:380 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:38:48:3848 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:41:25:4125 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:54:08:548 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:55:08:558 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:55:31:5531 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:55:39:5539 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:18:22)[39m
+2025-10-26 06:56:37:5637 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:56:51:5651 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:57:16:5716 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:59:03:593 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 06:59:37:5937 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 07:00:02:02 [31merror[39m: [31muncaughtException: getHealthData is not defined[39m
+[31mReferenceError: getHealthData is not defined[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/routes/health.js:66:30)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1734:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1899:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1469:32)[39m
+[31m    at Module._load (node:internal/modules/cjs/loader:1286:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1491:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (/home/gideon-nyarko/Downloads/Projects/Sankofa/sankofa-backend/src/server.js:20:22)[39m
+2025-10-26 07:02:16:216 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:21:1421 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:29:1429 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:44:1444 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 07:14:46:1446 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 08:29:24:2924 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 09:53:44:5344 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 11:11:39:1139 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 11:29:38:2938 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-26 13:26:37:2637 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31mError: listen EADDRINUSE: address already in use 127.0.0.1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 06:30:32:3032 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:04:59:459 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:05:32:532 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:05:39:539 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\node_modules\@supabase\supabase-js\dist\main\lib\helpers.js:50:15)[39m
+[31m    at new SupabaseClient (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\node_modules\@supabase\supabase-js\dist\main\SupabaseClient.js:34:59)[39m
+[31m    at createClient (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\node_modules\@supabase\supabase-js\dist\main\index.js:38:12)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\config\supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-10-27 07:05:49:549 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:07:31:731 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:24:40:2440 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:42:23:4223 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:42:55:4255 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:43:16:4316 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:43:17:4317 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:44:22:4422 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:49:05:495 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:49:05:495 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:49:05:495 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:54:35:5435 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:54:37:5437 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:54:37:5437 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:54:42:5442 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:54:42:5442 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:54:43:5443 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:55:45:5545 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:55:45:5545 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 07:55:45:5545 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 14:14:59:1459 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 14:14:59:1459 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 14:14:59:1459 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-27 18:36:31:3631 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
+2025-10-31 22:43:12:4312 [31merror[39m: [31muncaughtException: Cannot find module '../controllers/paymentController'[39m
+[31mRequire stack:[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\server.js[39m
+[31mError: Cannot find module '../controllers/paymentController'[39m
+[31mRequire stack:[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\server.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1211:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+2025-10-31 22:43:49:4349 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:46:16:4616 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:46:34:4634 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:46:46:4646 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:47:05:475 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:47:21:4721 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:52:26:5226 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:52:28:5228 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:52:32:5232 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:55:02:552 [31merror[39m: [31muncaughtException: Cannot find module '../controllers/paymentController'[39m
+[31mRequire stack:[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\server.js[39m
+[31mError: Cannot find module '../controllers/paymentController'[39m
+[31mRequire stack:[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\server.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1211:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+2025-10-31 22:55:57:5557 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 22:56:15:5615 [31merror[39m: [31muncaughtException: Cannot find module '../controllers/paymentController'[39m
+[31mRequire stack:[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\server.js[39m
+[31mError: Cannot find module '../controllers/paymentController'[39m
+[31mRequire stack:[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js[39m
+[31m- C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\server.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1211:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+2025-10-31 22:57:32:5732 [31merror[39m: [31muncaughtException: Identifier 'AppError' has already been declared[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\paymentController.js:1[39m
+[31mconst { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');const { AppError, asyncHandler } = require('../middleware/errorHandler');[39m
+[31m                                                                                 ^[39m
+
+[31mSyntaxError: Identifier 'AppError' has already been declared[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\routes\payments.js:15:5)[39m
+2025-10-31 23:12:21:1221 [31merror[39m: [31muncaughtException: Unexpected token '.'[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\models\HealthData.js:884[39m
+[31m      logger.error('Error getting preventive tips:', error);[39m
+[31m            ^[39m
+
+[31mSyntaxError: Unexpected token '.'[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\healthController.js:1:20)[39m
+2025-10-31 23:20:46:2046 [31merror[39m: [31muncaughtException: Unexpected token '}'[39m
+[31mC:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\services\smsService.js:751[39m
+[31m  }[39m
+[31m  ^[39m
+
+[31mSyntaxError: Unexpected token '}'[39m
+[31m    at wrapSafe (node:internal/modules/cjs/loader:1662:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1704:20)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+[31m    at require (node:internal/modules/helpers:135:16)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\controllers\supabaseAuthController.js:5:21)[39m
+2025-11-01 00:02:19:219 [31merror[39m: [31muncaughtException: supabaseUrl is required.[39m
+[31mError: supabaseUrl is required.[39m
+[31m    at validateSupabaseUrl (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\node_modules\@supabase\supabase-js\dist\main\lib\helpers.js:50:15)[39m
+[31m    at new SupabaseClient (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\node_modules\@supabase\supabase-js\dist\main\SupabaseClient.js:34:59)[39m
+[31m    at createClient (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\node_modules\@supabase\supabase-js\dist\main\index.js:38:12)[39m
+[31m    at Object.<anonymous> (C:\Users\revic\OneDrive\Desktop\hck54_final\sankofa_frontend\sankofa-backend\src\config\supabase.js:17:18)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1895:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+2025-11-01 00:14:33:1433 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use ::1:5000[39m
+[31mError: listen EADDRINUSE: address already in use ::1:5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1939:16)[39m
+[31m    at listenInCluster (node:net:1996:12)[39m
+[31m    at GetAddrInfoReqWrap.callback (node:net:2205:7)[39m
+[31m    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)[39m
