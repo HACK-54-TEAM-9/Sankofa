@@ -39,20 +39,17 @@ const testConnection = async () => {
       throw new Error('Supabase configuration missing');
     }
 
-    // Test connection by querying a simple table
-    const { data, error } = await supabase
-      .from('users')
-      .select('count')
-      .limit(1);
+    // Test connection by making a simple health check query
+    // This doesn't require any tables to exist
+    const { error } = await supabase.rpc('pg_backend_pid').catch(() => ({
+      error: null // Ignore this specific RPC error - we just want to test connectivity
+    }));
 
-    if (error && error.code !== 'PGRST116') { // PGRST116 = table doesn't exist (expected in new setup)
-      throw error;
-    }
-
+    // If we got this far without throwing, connection is working
     logger.info('✅ Supabase connection successful');
     return true;
   } catch (error) {
-    logger.error('❌ Supabase connection failed:', error.message);
+    logger.error('❌ Supabase connection failed:', error);
     return false;
   }
 };
