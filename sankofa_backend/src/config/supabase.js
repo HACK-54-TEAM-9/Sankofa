@@ -30,6 +30,14 @@ const supabase = supabaseUrl && supabaseKey
         autoRefreshToken: true,
         persistSession: true,
         detectSessionInUrl: false
+      },
+      global: {
+        fetch: (...args) => {
+          return fetch(...args).catch(err => {
+            logger.error('Supabase fetch error:', err.message);
+            throw err;
+          });
+        }
       }
     })
   : null;
@@ -40,61 +48,89 @@ const supabaseAdmin = supabaseUrl && supabaseServiceKey
       auth: {
         autoRefreshToken: false,
         persistSession: false
+      },
+      global: {
+        fetch: (...args) => {
+          return fetch(...args).catch(err => {
+            logger.error('Supabase admin fetch error:', err.message);
+            throw err;
+          });
+        }
       }
     })
   : null;
 
-// Database connection test
-const testConnection = async () => {
-  try {
-    if (!supabaseUrl || !supabaseKey) {
-      logger.error('❌ Missing Supabase configuration - cannot connect');
-      return false;
-    }
+// Database connection test with retries
+const testConnection = async (retries = 3, delay = 2000) => {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      if (!supabaseUrl || !supabaseKey) {
+        logger.error('❌ Missing Supabase configuration - cannot connect');
+        return false;
+      }
 
-    if (!supabase) {
-      logger.error('❌ Supabase client not initialized');
-      return false;
-    }
+      if (!supabase) {
+        logger.error('❌ Supabase client not initialized');
+        return false;
+      }
 
-    logger.info('🔍 Testing Supabase connection...');
+      logger.info(`🔍 Testing Supabase connection (attempt ${attempt}/${retries})...`);
 
-    // Use admin client if available (bypasses RLS), otherwise use regular client
-    const client = supabaseAdmin || supabase;
-    
-    // Simple connection test - just verify we can make a request
-    const { data, error } = await client
-      .from('hubs')
-      .select('id')
-      .limit(1);
-
-    if (error) {
-      logger.error('Supabase query error:', {
-        code: error.code,
-        message: error.message,
-        details: error.details,
-        hint: error.hint
-      });
+      // Use admin client if available (bypasses RLS), otherwise use regular client
+      const client = supabaseAdmin || supabase;
       
-      // If table doesn't exist, that's still a successful connection
-      if (error.code === 'PGRST116' || error.code === '42P01') {
-        logger.info('✅ Supabase connection successful (table not found is ok)');
-        return true;
+      // Simple connection test with timeout
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Connection timeout after 10s')), 10000)
+      );
+      
+      const queryPromise = client
+        .from('hubs')
+        .select('id')
+        .limit(1);
+
+      const { data, error } = await Promise.race([queryPromise, timeoutPromise]);
+
+      if (error) {
+        logger.warn('Supabase query error:', {
+          code: error.code,
+          message: error.message,
+          attempt: `${attempt}/${retries}`
+        });
+        
+        // If table doesn't exist, that's still a successful connection
+        if (error.code === 'PGRST116' || error.code === '42P01') {
+          logger.info('✅ Supabase connection successful (table not found is ok)');
+          return true;
+        }
+        
+        if (attempt === retries) {
+          throw error;
+        }
+        
+        logger.info(`⏳ Waiting ${delay}ms before retry...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+        continue;
+      }
+
+      logger.info('✅ Supabase connection successful', { rowsFound: data?.length || 0 });
+      return true;
+    } catch (error) {
+      if (attempt === retries) {
+        logger.error('❌ Supabase connection failed after all retries:', {
+          message: error.message,
+          name: error.name,
+          attempts: retries
+        });
+        return false;
       }
       
-      throw error;
+      logger.warn(`⚠️ Attempt ${attempt} failed: ${error.message}. Retrying...`);
+      await new Promise(resolve => setTimeout(resolve, delay));
     }
-
-    logger.info('✅ Supabase connection successful', { rowsFound: data?.length || 0 });
-    return true;
-  } catch (error) {
-    logger.error('❌ Supabase connection failed:', {
-      message: error.message,
-      name: error.name,
-      cause: error.cause?.message || 'none'
-    });
-    return false;
   }
+  
+  return false;
 };
 
 // Health check for Supabase
