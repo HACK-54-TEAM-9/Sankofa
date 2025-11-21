@@ -22,7 +22,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Sankofa-Coin Logo path
-const imgRectangle10 = '/components/images/logo.png';
+const imgRectangle10 = '/logo.png';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
