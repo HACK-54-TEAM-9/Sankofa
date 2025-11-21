@@ -14,9 +14,9 @@ async function fetchAPI(
   options: RequestInit = {},
   token?: string
 ) {
-  const headers: HeadersInit = {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
-    ...options.headers,
+    ...(options.headers as Record<string, string>),
   };
 
   // Use access token if provided, otherwise use public anon key

@@ -131,7 +131,7 @@ export function SeeAndReportPage({ onNavigate }: SeeAndReportPageProps) {
       formDataToSend.append('description', formData.description);
       
       // Append all media files
-      mediaFiles.forEach((file, index) => {
+      mediaFiles.forEach((file) => {
         formDataToSend.append('media', file);
       });
 

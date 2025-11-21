@@ -10,7 +10,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { toast } from 'sonner';
 
 interface VolunteerPageProps {
-  onNavigate: (page: string) => void;
+  onNavigate?: (page: string) => void;
 }
 
 export function VolunteerPage({ onNavigate }: VolunteerPageProps) {

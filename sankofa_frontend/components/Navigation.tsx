@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   Menu,
-  X,
   LogIn,
   LogOut,
   User,
@@ -16,7 +15,6 @@ import {
   DrawerDescription,
 } from "./ui/drawer";
 import { useAuth } from "./AuthContext";
-import MaskGroup from "../imports/MaskGroup";
 import {
   DropdownMenu,
   DropdownMenuContent,
