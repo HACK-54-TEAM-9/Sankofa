@@ -26,7 +26,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["vite.config.ts", "postcss.config.js", "tailwind.config.js"],
+  "include": ["src", "components", "hooks", "utils", "imports", "App.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
