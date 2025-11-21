@@ -66,7 +66,7 @@ export const authAPI = {
   loginWithPhone: async (data: { phone: string; password: string }) => {
     if (USE_DIRECT_SUPABASE) {
       // For phone login, we need to find user by phone and use email
-      const collector = await supabaseDB.supabaseCollectors.getByPhone(data.phone);
+      const collector = await supabaseDB.supabaseCollectors.getByPhone(data.phone) as any;
       if (collector && collector.user_id) {
         const user = await supabaseDB.supabaseAuth.getUser();
         return { user, session: await supabaseDB.supabaseAuth.getSession() };

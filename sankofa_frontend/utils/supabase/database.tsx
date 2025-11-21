@@ -5,9 +5,6 @@ import { supabase } from './client';
  * Use these when backend API is unavailable
  */
 
-// Type helper to work around strict typing
-type DbRow = Record<string, any>;
-
 // Auth operations
 export const supabaseAuth = {
   signUp: async (email: string, password: string, metadata: { name: string; role: string; phone?: string }) => {
@@ -175,9 +172,9 @@ export const supabaseCollections = {
       updateData.verified_at = new Date().toISOString();
     }
     
-    const { data, error } = await supabase
-      .from('collections')
-      .update(updateData as any)
+    const { data, error } = await (supabase
+      .from('collections') as any)
+      .update(updateData)
       .eq('id', collectionId)
       .select()
       .single();
@@ -281,9 +278,9 @@ export const supabaseMessages = {
   },
 
   markAsRead: async (messageId: string) => {
-    const { data, error } = await supabase
-      .from('messages')
-      .update({ is_read: true, read_at: new Date().toISOString() } as any)
+    const { data, error } = await (supabase
+      .from('messages') as any)
+      .update({ is_read: true, read_at: new Date().toISOString() })
       .eq('id', messageId)
       .select()
       .single();
