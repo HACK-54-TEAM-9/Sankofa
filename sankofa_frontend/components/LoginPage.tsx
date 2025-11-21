@@ -113,7 +113,7 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
           <div className="flex justify-center mb-6">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-lg p-2">
               <img 
-                src="/components/images/logo.png" 
+                src="/logo.png" 
                 alt="Sankofa-Coin Logo"
                 className="h-full w-full object-contain"
               />

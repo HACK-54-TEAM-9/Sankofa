@@ -73,7 +73,7 @@ export function Navigation({
             className="flex items-center gap-3 group"
           >
             <img 
-              src="/components/images/logo.png" 
+              src="/logo.png" 
               alt="Sankofa-Coin Logo"
               className="h-12 w-12 object-contain group-hover:scale-105 transition-transform"
             />
