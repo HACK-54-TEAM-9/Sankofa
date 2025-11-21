@@ -21,15 +21,128 @@ import {
   Camera,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
-// Placeholder for Figma asset - replace with actual image path
-const imgRectangle10 = '';
+// Sankofa-Coin Logo path
+const imgRectangle10 = '/components/images/logo.png';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
+// Hub data
+const hubs = [
+  {
+    id: 'market-circle',
+    name: 'Market Circle',
+    location: 'Western Region',
+    collectors: null,
+    comingSoon: true,
+    position: { top: '30%', left: '25%' }
+  },
+  {
+    id: 'tema-hub',
+    name: 'Tema Hub',
+    location: 'Community 1',
+    region: 'Greater Accra Region',
+    collectors: 112,
+    comingSoon: false,
+    position: { bottom: '28%', right: '22%' }
+  },
+  {
+    id: 'accra-central',
+    name: 'Accra Central Hub',
+    location: 'Makola Market',
+    region: 'Greater Accra Region',
+    collectors: 234,
+    comingSoon: false,
+    position: { bottom: '30%', right: '20%' }
+  },
+  {
+    id: 'kumasi-hub',
+    name: 'Kumasi Hub',
+    location: 'Kejetia Market',
+    region: 'Ashanti Region',
+    collectors: 189,
+    comingSoon: false,
+    position: { top: '45%', left: '35%' }
+  },
+  {
+    id: 'sunyani-hub',
+    name: 'Sunyani Hub',
+    location: 'Central Market',
+    region: 'Bono Region',
+    collectors: null,
+    comingSoon: true,
+    position: { top: '45%', left: '35%' }
+  },
+  {
+    id: 'ho-hub',
+    name: 'Ho Hub',
+    location: 'Main Market',
+    region: 'Volta Region',
+    collectors: null,
+    comingSoon: true,
+    position: { top: '50%', right: '25%' }
+  },
+  {
+    id: 'tamale-hub',
+    name: 'Tamale Hub',
+    location: 'Central Market',
+    region: 'Northern Region',
+    collectors: 142,
+    comingSoon: false,
+    position: { top: '12%', left: '50%' }
+  },
+  {
+    id: 'cape-coast-hub',
+    name: 'Cape Coast Hub',
+    location: 'Kotokuraba Market',
+    region: 'Central Region',
+    collectors: 96,
+    comingSoon: false,
+    position: { bottom: '35%', left: '28%' }
+  },
+  {
+    id: 'takoradi-hub',
+    name: 'Takoradi Hub',
+    location: 'Market Circle',
+    region: 'Western Region',
+    collectors: null,
+    comingSoon: true,
+    position: { bottom: '38%', left: '20%' }
+  },
+  {
+    id: 'koforidua-hub',
+    name: 'Koforidua Hub',
+    location: 'Main Market',
+    region: 'Eastern Region',
+    collectors: null,
+    comingSoon: true,
+    position: { top: '50%', right: '28%' }
+  },
+  {
+    id: 'wa-hub',
+    name: 'Wa Hub',
+    location: 'Town Centre',
+    region: 'Upper West Region',
+    collectors: null,
+    comingSoon: true,
+    position: { top: '15%', left: '30%' }
+  },
+  {
+    id: 'bolgatanga-hub',
+    name: 'Bolgatanga Hub',
+    location: 'Central Market',
+    region: 'Upper East Region',
+    collectors: null,
+    comingSoon: true,
+    position: { top: '10%', right: '35%' }
+  },
+];
+
 export function HomePage({ onNavigate }: HomePageProps) {
+  const [selectedHub, setSelectedHub] = useState('tema-hub');
   return (
     <div className="w-full">
       <AIFloatingButton onNavigate={onNavigate} />
@@ -550,6 +663,192 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
+      {/* Find a Hub Near You */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-[#08A26F]/10 border border-[#08A26F]/20 px-4 py-2 rounded-full mb-4">
+                <MapPin className="h-4 w-4 text-[#08A26F]" />
+                <span className="text-sm text-gray-700">
+                  Nationwide Network
+                </span>
+              </div>
+              <h2 className="text-4xl text-gray-900 mb-4 font-bold">
+                Find a Hub Near You
+              </h2>
+              <p className="text-gray-600">
+                Our collection hubs are expanding across Ghana. Bring your plastic waste to the nearest hub and start earning today.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8">
+              {/* Map Section */}
+              <div className="bg-stone-50 rounded-3xl p-8 border border-stone-200">
+                <h3 className="text-lg text-gray-900 mb-2 font-semibold">
+                  Our Collection Hubs
+                </h3>
+                <p className="text-sm text-gray-600 mb-6">
+                  {hubs.filter(h => !h.comingSoon).length} active hubs across Ghana
+                </p>
+
+                {/* Ghana Map Visualization with borders */}
+                <div className="relative bg-white rounded-2xl p-8 h-96 border border-stone-200">
+                  {/* Ghana map outline */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Simplified Ghana border shape */}
+                    <path
+                      d="M 180 80 L 220 80 L 240 100 L 250 140 L 260 180 L 270 220 L 280 260 L 285 290 L 280 310 L 260 320 L 230 325 L 200 330 L 170 328 L 140 320 L 120 300 L 110 270 L 105 240 L 100 200 L 105 160 L 120 120 L 150 90 Z"
+                      stroke="#D1D5DB"
+                      strokeWidth="2"
+                      fill="transparent"
+                    />
+                  </svg>
+
+                  {/* Map pins */}
+                  <div className="relative h-full">
+                    {/* Active Hub (North - Tamale area) */}
+                    <div className="absolute top-12 left-1/2 -translate-x-1/2">
+                      <div className="relative">
+                        <div className="w-3 h-3 bg-[#08A26F] rounded-full ring-2 ring-[#08A26F]/30"></div>
+                      </div>
+                    </div>
+
+                    {/* Active Hub (Middle left - Kumasi area) */}
+                    <div className="absolute top-1/2 left-[35%] -translate-y-1/2">
+                      <div className="relative">
+                        <div className="w-3 h-3 bg-[#08A26F] rounded-full ring-2 ring-[#08A26F]/30"></div>
+                      </div>
+                    </div>
+
+                    {/* Active Hub (Bottom left) */}
+                    <div className="absolute bottom-[35%] left-[28%]">
+                      <div className="w-3 h-3 bg-[#08A26F] rounded-full ring-2 ring-[#08A26F]/30"></div>
+                    </div>
+
+                    {/* Dynamic hub pins based on data - only show non-coming soon hubs */}
+                    {hubs.filter(hub => !hub.comingSoon).map((hub) => (
+                      <div
+                        key={hub.id}
+                        className="absolute transition-all duration-300"
+                        style={hub.position}
+                      >
+                        <div className="relative">
+                          <div 
+                            className={`w-3 h-3 rounded-full ring-2 transition-all duration-300 ${
+                              selectedHub === hub.id
+                                ? 'bg-[#FBBF24] ring-[#FBBF24]/30 scale-110'
+                                : 'bg-[#08A26F] ring-[#08A26F]/30'
+                            }`}
+                          ></div>
+                          {selectedHub === hub.id && (
+                            <span className="absolute top-4 left-1/2 -translate-x-1/2 text-xs text-gray-700 whitespace-nowrap font-medium">
+                              {hub.name}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+
+                    {/* Legend */}
+                    <div className="absolute bottom-6 left-6 bg-white rounded-lg p-3 shadow-sm border border-stone-200">
+                      <div className="flex items-center gap-4 text-xs">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2.5 h-2.5 bg-[#08A26F] rounded-full"></div>
+                          <span className="text-gray-700">Active Hub</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2.5 h-2.5 bg-gray-300 rounded-full"></div>
+                          <span className="text-gray-700">Coming Soon</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hubs List with scroll */}
+              <div className="relative">
+                <div className="space-y-3 max-h-[500px] overflow-y-auto pr-8 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                  {hubs.map((hub) => (
+                    <div
+                      key={hub.id}
+                      onClick={() => setSelectedHub(hub.id)}
+                      className={`rounded-2xl p-5 transition-all cursor-pointer ${
+                        selectedHub === hub.id && !hub.comingSoon
+                          ? 'bg-white border-2 border-[#08A26F] shadow-md'
+                          : hub.comingSoon
+                          ? 'bg-stone-50 border border-stone-200 opacity-70 hover:opacity-80'
+                          : 'bg-stone-50 border border-stone-200 hover:shadow-sm'
+                      }`}
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex items-start gap-4">
+                          <div 
+                            className={`w-10 h-10 rounded-full flex items-center justify-center mt-1 ${
+                              selectedHub === hub.id
+                                ? 'bg-[#08A26F]/10'
+                                : 'bg-gray-100'
+                            }`}
+                          >
+                            <MapPin 
+                              className={`h-5 w-5 ${
+                                selectedHub === hub.id
+                                  ? 'text-[#08A26F]'
+                                  : 'text-gray-400'
+                              }`}
+                            />
+                          </div>
+                          <div>
+                            <div className="flex items-center gap-2 mb-1">
+                              <h4 className="text-gray-900 font-semibold">
+                                {hub.name}
+                              </h4>
+                              {hub.comingSoon && (
+                                <span className="text-xs text-gray-500 px-2 py-0.5 bg-gray-100 rounded-full">
+                                  Coming Soon
+                                </span>
+                              )}
+                            </div>
+                            <p className={`text-sm mb-1 ${
+                              selectedHub === hub.id ? 'text-gray-600' : 'text-gray-500'
+                            }`}>
+                              {hub.location}
+                            </p>
+                            {hub.region && (
+                              <p className="text-xs text-gray-500">
+                                {hub.region}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          {hub.collectors ? (
+                            <>
+                              <div className={`text-2xl font-bold ${
+                                selectedHub === hub.id ? 'text-[#08A26F]' : 'text-gray-900'
+                              }`}>
+                                {hub.collectors}
+                              </div>
+                              <div className="text-xs text-gray-500">collectors</div>
+                            </>
+                          ) : (
+                            <span className="text-xs text-gray-500 px-3 py-1 bg-gray-100 rounded-full">
+                              collectors
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Featured: Health Insights */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -837,7 +1136,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 size="lg"
                 variant="outline"
                 onClick={() => onNavigate("messaging")}
-                className="border-2 border-white text-[rgb(0,0,0)] hover:bg-white hover:text-[#1a1a1a] rounded-full px-8"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#1a1a1a] rounded-full px-8"
               >
                 Contact Us
               </Button>
