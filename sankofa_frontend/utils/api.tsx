@@ -1,6 +1,10 @@
 import { projectId, publicAnonKey } from './supabase/info';
 
-const API_BASE_URL = `https://${projectId}.supabase.co/functions/v1/make-server-6c51ae02`;
+// Backend API URL - automatically switches between local dev and production
+const API_BASE_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.DEV 
+    ? 'http://localhost:5000/api' 
+    : 'https://sankofa-backend.onrender.com/api');
 
 export class ApiError extends Error {
   constructor(public status: number, message: string) {
