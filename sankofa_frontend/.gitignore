@@ -13,6 +13,7 @@ dist-ssr
 *.local
 *.d.ts
 !src/**/*.d.ts
+!vite-env.d.ts
 
 # Editor directories and files
 .vscode/*
