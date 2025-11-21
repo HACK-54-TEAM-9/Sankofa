@@ -1,4 +1,4 @@
-import { projectId, publicAnonKey } from './supabase/info';
+import { publicAnonKey } from './supabase/info';
 
 // Backend API URL - automatically switches between local dev and production
 const API_BASE_URL = import.meta.env.VITE_API_URL || 
