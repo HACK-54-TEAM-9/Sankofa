@@ -36,25 +36,48 @@ const supabaseAdmin = supabaseServiceKey
 const testConnection = async () => {
   try {
     if (!supabaseUrl || !supabaseKey) {
+      logger.error('Missing Supabase configuration:', {
+        hasUrl: !!supabaseUrl,
+        hasKey: !!supabaseKey,
+        urlLength: supabaseUrl?.length || 0,
+        keyLength: supabaseKey?.length || 0
+      });
       throw new Error('Supabase configuration missing');
     }
 
+    logger.info('Testing Supabase connection...', {
+      url: supabaseUrl,
+      keyPrefix: supabaseKey?.substring(0, 20) + '...'
+    });
+
     // Simple connection test - just verify we can make a request
     // RLS is disabled, so any query should work
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('hubs')
       .select('id')
       .limit(1);
 
     // If no error or table doesn't exist error, connection is good
     if (error && error.code !== 'PGRST116' && error.code !== '42P01') {
+      logger.error('Supabase query error:', {
+        code: error.code,
+        message: error.message,
+        details: error.details,
+        hint: error.hint
+      });
       throw error;
     }
 
     logger.info('✅ Supabase connection successful');
     return true;
   } catch (error) {
-    logger.error('❌ Supabase connection failed:', error);
+    logger.error('❌ Supabase connection failed:', {
+      message: error.message,
+      code: error.code || '',
+      details: error.details || '',
+      hint: error.hint || '',
+      stack: error.stack
+    });
     return false;
   }
 };
