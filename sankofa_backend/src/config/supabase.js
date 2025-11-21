@@ -6,6 +6,16 @@ const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_ANON_KEY;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+// Log configuration status on startup
+logger.info('Supabase configuration check:', {
+  hasUrl: !!supabaseUrl,
+  hasAnonKey: !!supabaseKey,
+  hasServiceKey: !!supabaseServiceKey,
+  url: supabaseUrl || 'MISSING',
+  anonKeyPrefix: supabaseKey ? supabaseKey.substring(0, 20) + '...' : 'MISSING',
+  serviceKeyPrefix: supabaseServiceKey ? supabaseServiceKey.substring(0, 20) + '...' : 'MISSING'
+});
+
 // Validate required environment variables
 if (!supabaseUrl || !supabaseKey) {
   logger.error('Missing required Supabase environment variables');
@@ -14,16 +24,18 @@ if (!supabaseUrl || !supabaseKey) {
 }
 
 // Create Supabase client for general use (with RLS)
-const supabase = createClient(supabaseUrl, supabaseKey, {
-  auth: {
-    autoRefreshToken: true,
-    persistSession: true,
-    detectSessionInUrl: false
-  }
-});
+const supabase = supabaseUrl && supabaseKey 
+  ? createClient(supabaseUrl, supabaseKey, {
+      auth: {
+        autoRefreshToken: true,
+        persistSession: true,
+        detectSessionInUrl: false
+      }
+    })
+  : null;
 
 // Create Supabase client for admin operations (bypasses RLS)
-const supabaseAdmin = supabaseServiceKey 
+const supabaseAdmin = supabaseUrl && supabaseServiceKey 
   ? createClient(supabaseUrl, supabaseServiceKey, {
       auth: {
         autoRefreshToken: false,
@@ -36,47 +48,50 @@ const supabaseAdmin = supabaseServiceKey
 const testConnection = async () => {
   try {
     if (!supabaseUrl || !supabaseKey) {
-      logger.error('Missing Supabase configuration:', {
-        hasUrl: !!supabaseUrl,
-        hasKey: !!supabaseKey,
-        urlLength: supabaseUrl?.length || 0,
-        keyLength: supabaseKey?.length || 0
-      });
-      throw new Error('Supabase configuration missing');
+      logger.error('❌ Missing Supabase configuration - cannot connect');
+      return false;
     }
 
-    logger.info('Testing Supabase connection...', {
-      url: supabaseUrl,
-      keyPrefix: supabaseKey?.substring(0, 20) + '...'
-    });
+    if (!supabase) {
+      logger.error('❌ Supabase client not initialized');
+      return false;
+    }
 
+    logger.info('🔍 Testing Supabase connection...');
+
+    // Use admin client if available (bypasses RLS), otherwise use regular client
+    const client = supabaseAdmin || supabase;
+    
     // Simple connection test - just verify we can make a request
-    // RLS is disabled, so any query should work
-    const { data, error } = await supabase
+    const { data, error } = await client
       .from('hubs')
       .select('id')
       .limit(1);
 
-    // If no error or table doesn't exist error, connection is good
-    if (error && error.code !== 'PGRST116' && error.code !== '42P01') {
+    if (error) {
       logger.error('Supabase query error:', {
         code: error.code,
         message: error.message,
         details: error.details,
         hint: error.hint
       });
+      
+      // If table doesn't exist, that's still a successful connection
+      if (error.code === 'PGRST116' || error.code === '42P01') {
+        logger.info('✅ Supabase connection successful (table not found is ok)');
+        return true;
+      }
+      
       throw error;
     }
 
-    logger.info('✅ Supabase connection successful');
+    logger.info('✅ Supabase connection successful', { rowsFound: data?.length || 0 });
     return true;
   } catch (error) {
     logger.error('❌ Supabase connection failed:', {
       message: error.message,
-      code: error.code || '',
-      details: error.details || '',
-      hint: error.hint || '',
-      stack: error.stack
+      name: error.name,
+      cause: error.cause?.message || 'none'
     });
     return false;
   }
