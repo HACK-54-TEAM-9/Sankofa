@@ -162,7 +162,7 @@ function AppContent() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img 
-                  src="/components/images/logo.png" 
+                  src="/logo.png" 
                   alt="Sankofa-Coin Logo"
                   className="h-10 w-10 object-contain"
                 />
