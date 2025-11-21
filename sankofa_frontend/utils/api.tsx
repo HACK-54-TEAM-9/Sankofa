@@ -1,10 +1,14 @@
 import { publicAnonKey } from './supabase/info';
+import * as supabaseDB from './supabase/database';
 
 // Backend API URL - automatically switches between local dev and production
 const API_BASE_URL = import.meta.env.VITE_API_URL || 
   (import.meta.env.DEV 
     ? 'http://localhost:5000/api' 
     : 'https://sankofa-b2jm.onrender.com/api');
+
+// Flag to use direct Supabase when backend is unavailable
+const USE_DIRECT_SUPABASE = import.meta.env.VITE_USE_DIRECT_DB === 'true' || true; // Default to true for now
 
 export class ApiError extends Error {
   constructor(public status: number, message: string) {
@@ -43,52 +47,141 @@ async function fetchAPI(
   return response.json();
 }
 
-// Auth API
+// Auth API with Supabase fallback
 export const authAPI = {
-  signup: (data: { email: string; password: string; name: string; role: string; phone?: string }) =>
-    fetchAPI('/signup', {
+  signup: async (data: { email: string; password: string; name: string; role: string; phone?: string }) => {
+    if (USE_DIRECT_SUPABASE) {
+      return supabaseDB.supabaseAuth.signUp(data.email, data.password, {
+        name: data.name,
+        role: data.role,
+        phone: data.phone
+      });
+    }
+    return fetchAPI('/signup', {
       method: 'POST',
       body: JSON.stringify(data),
-    }),
+    });
+  },
 
-  loginWithPhone: (data: { phone: string; password: string }) =>
-    fetchAPI('/login/phone', {
+  loginWithPhone: async (data: { phone: string; password: string }) => {
+    if (USE_DIRECT_SUPABASE) {
+      // For phone login, we need to find user by phone and use email
+      const collector = await supabaseDB.supabaseCollectors.getByPhone(data.phone);
+      if (collector && collector.user_id) {
+        const user = await supabaseDB.supabaseAuth.getUser();
+        return { user, session: await supabaseDB.supabaseAuth.getSession() };
+      }
+      throw new Error('User not found with this phone number');
+    }
+    return fetchAPI('/login/phone', {
       method: 'POST',
       body: JSON.stringify(data),
-    }),
+    });
+  },
 
-  getUser: (token: string) =>
-    fetchAPI('/user', {}, token),
+  getUser: async (token: string) => {
+    if (USE_DIRECT_SUPABASE) {
+      return supabaseDB.supabaseAuth.getUser();
+    }
+    return fetchAPI('/user', {}, token);
+  },
+
+  // Additional direct auth methods
+  signIn: (email: string, password: string) => supabaseDB.supabaseAuth.signIn(email, password),
+  signOut: () => supabaseDB.supabaseAuth.signOut(),
+  getSession: () => supabaseDB.supabaseAuth.getSession(),
 };
 
-// Collector API
+// Collector API with Supabase fallback
 export const collectorAPI = {
-  getDashboard: (token: string) =>
-    fetchAPI('/collector/dashboard', {}, token),
+  getDashboard: async (token: string) => {
+    if (USE_DIRECT_SUPABASE) {
+      const user = await supabaseDB.supabaseAuth.getUser();
+      if (!user) throw new Error('Not authenticated');
+      
+      const collector = await supabaseDB.supabaseCollectors.getByUserId(user.id) as any;
+      const stats = await supabaseDB.supabaseDashboard.getCollectorStats(collector.id);
+      
+      return { collector, ...stats };
+    }
+    return fetchAPI('/collector/dashboard', {}, token);
+  },
 
-  submitCollection: (token: string, data: { weight: number; location: string; photoUrl?: string }) =>
-    fetchAPI('/collector/collect', {
+  submitCollection: async (token: string, data: { weight: number; location: string; photoUrl?: string }) => {
+    if (USE_DIRECT_SUPABASE) {
+      const user = await supabaseDB.supabaseAuth.getUser();
+      if (!user) throw new Error('Not authenticated');
+      
+      const collector = await supabaseDB.supabaseCollectors.getByUserId(user.id) as any;
+      
+      return supabaseDB.supabaseCollections.create({
+        collector_id: collector.id,
+        hub_id: collector.primary_hub_id || '',
+        plastic_type: 'PET', // Default, should be from form
+        weight_kg: data.weight,
+        price_per_kg: 2.5, // Default rate
+        total_value: data.weight * 2.5,
+        collection_location: data.location ? JSON.parse(data.location) : null
+      });
+    }
+    return fetchAPI('/collector/collect', {
       method: 'POST',
       body: JSON.stringify(data),
-    }, token),
+    }, token);
+  },
 };
 
-// Hub Manager API
+// Hub Manager API with Supabase fallback
 export const hubAPI = {
-  getDashboard: (token: string) =>
-    fetchAPI('/hub/dashboard', {}, token),
+  getDashboard: async (token: string) => {
+    if (USE_DIRECT_SUPABASE) {
+      const user = await supabaseDB.supabaseAuth.getUser();
+      if (!user) throw new Error('Not authenticated');
+      
+      const hub = await supabaseDB.supabaseHubs.getByManagerId(user.id) as any;
+      const stats = await supabaseDB.supabaseDashboard.getHubStats(hub.id);
+      
+      return { hub, ...stats };
+    }
+    return fetchAPI('/hub/dashboard', {}, token);
+  },
 
-  getPendingCollections: (token: string) =>
-    fetchAPI('/hub/pending-collections', {}, token),
+  getPendingCollections: async (token: string) => {
+    if (USE_DIRECT_SUPABASE) {
+      const user = await supabaseDB.supabaseAuth.getUser();
+      if (!user) throw new Error('Not authenticated');
+      
+      const hub = await supabaseDB.supabaseHubs.getByManagerId(user.id) as any;
+      return supabaseDB.supabaseCollections.getPending(hub.id);
+    }
+    return fetchAPI('/hub/pending-collections', {}, token);
+  },
 
-  searchCollector: (token: string, phone: string) =>
-    fetchAPI(`/hub/search-collector/${encodeURIComponent(phone)}`, {}, token),
+  searchCollector: async (token: string, phone: string) => {
+    if (USE_DIRECT_SUPABASE) {
+      try {
+        return await supabaseDB.supabaseCollectors.getByPhone(phone);
+      } catch {
+        return null;
+      }
+    }
+    return fetchAPI(`/hub/search-collector/${encodeURIComponent(phone)}`, {}, token);
+  },
 
-  registerCollector: (token: string, data: { phone: string; name: string; neighborhood: string }) =>
-    fetchAPI('/hub/register-collector', {
+  registerCollector: async (token: string, data: { phone: string; name: string; neighborhood: string }) => {
+    if (USE_DIRECT_SUPABASE) {
+      return supabaseDB.supabaseCollectors.create({
+        card_number: `COL-${Date.now()}`,
+        full_name: data.name,
+        phone: data.phone,
+        neighborhood: data.neighborhood
+      });
+    }
+    return fetchAPI('/hub/register-collector', {
       method: 'POST',
       body: JSON.stringify(data),
-    }, token),
+    }, token);
+  },
 
   registerCollectorFull: (token: string, data: {
     collectorId: string;
