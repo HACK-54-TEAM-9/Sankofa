@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
 import { Avatar, AvatarFallback } from './ui/avatar';
-import { Alert, AlertDescription } from './ui/alert';
+// import { Alert, AlertDescription } from './ui/alert';
 import {
   Select,
   SelectContent,
@@ -21,10 +21,8 @@ import {
   Package,
   MapPin,
   Download,
-  Filter,
   TrendingUp,
   CheckCircle2,
-  AlertCircle,
   Clock,
   Coins,
 } from 'lucide-react';

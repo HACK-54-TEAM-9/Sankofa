@@ -12,7 +12,7 @@ interface HubManagerPageProps {
 }
 
 export function HubManagerPage({ onNavigate }: HubManagerPageProps) {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user: _ } = useAuth();
   const [showApplicationForm, setShowApplicationForm] = useState(false);
 
   if (showApplicationForm) {

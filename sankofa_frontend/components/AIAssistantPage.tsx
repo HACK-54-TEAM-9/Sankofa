@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Mic, Send, Sparkles, MessageCircle, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';

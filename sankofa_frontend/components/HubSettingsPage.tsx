@@ -8,24 +8,13 @@ import { Separator } from './ui/separator';
 import { Alert, AlertDescription } from './ui/alert';
 import { Avatar, AvatarFallback } from './ui/avatar';
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from './ui/select';
-import {
-  Settings,
   User,
   Building2,
   Bell,
   Lock,
-  MapPin,
   Phone,
   Mail,
   Save,
-  CheckCircle2,
-  AlertCircle,
   Camera,
 } from 'lucide-react';
 import { useAuth } from './AuthContext';

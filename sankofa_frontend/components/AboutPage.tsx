@@ -8,7 +8,7 @@ import { Card } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { EducationalResources } from './EducationalResources';
 import { SeeAndReportPopup } from './SeeAndReportPopup';
-import { Heart, Target, Eye, Users, CheckCircle2, ArrowRight, Recycle, TrendingUp, MapPin, Shield } from 'lucide-react';
+import { Heart, Target, Eye, Users, CheckCircle2, ArrowRight, Recycle, TrendingUp, Shield } from 'lucide-react';
 
 interface AboutPageProps {
   onNavigate: (page: string) => void;

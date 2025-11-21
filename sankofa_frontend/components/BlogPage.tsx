@@ -1,8 +1,7 @@
-import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeeAndReportPopup } from './SeeAndReportPopup';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 interface BlogPageProps {
   onNavigate: (page: string) => void;

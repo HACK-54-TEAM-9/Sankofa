@@ -22,16 +22,13 @@ import {
   Camera,
   CheckCircle2,
   AlertCircle,
-  CreditCard,
   Languages,
   Users,
   ArrowLeft,
   ArrowRight,
-  Home,
   Save,
   X,
   CreditCard as IdCard,
-  Fingerprint,
   UserCheck,
 } from 'lucide-react';
 import { useAuth } from './AuthContext';
@@ -44,13 +41,13 @@ interface CollectorRegistrationFlowProps {
 
 export function CollectorRegistrationFlow({
   onNavigate,
-  onComplete,
+  onComplete: _,
 }: CollectorRegistrationFlowProps) {
   const { accessToken } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [_success, setSuccess] = useState('');
 
   // Form data
   const [fullName, setFullName] = useState('');
@@ -207,7 +204,7 @@ export function CollectorRegistrationFlow({
         registrationDate: new Date().toISOString(),
       };
 
-      const result = await hubAPI.registerCollectorFull(accessToken!, registrationData);
+      await hubAPI.registerCollectorFull(accessToken!, registrationData);
 
       setSuccess(`Successfully registered ${fullName}!`);
       setCurrentStep(totalSteps + 1); // Move to success screen

@@ -9,7 +9,6 @@ import {
   Receipt,
   Settings,
   Menu,
-  X,
   Building2,
   UserPlus,
   Plus,

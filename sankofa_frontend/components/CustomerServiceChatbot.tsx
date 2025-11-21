@@ -1,14 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
-import { Badge } from './ui/badge';
 import {
   MessageCircle,
   X,
   Send,
   Bot,
   User,
-  Sparkles,
   Minimize2,
 } from 'lucide-react';
 import { projectId, publicAnonKey } from '../utils/supabase/info';

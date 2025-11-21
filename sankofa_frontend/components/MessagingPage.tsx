@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { Send, Search, Bell, MessageCircle, Users, AlertCircle, CheckCircle2, Clock, Filter } from 'lucide-react';
+import { Send, Search, Bell, MessageCircle, AlertCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
 import { Badge } from './ui/badge';
 import { ScrollArea } from './ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';

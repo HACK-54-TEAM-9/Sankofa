@@ -13,7 +13,7 @@ interface VolunteerPageProps {
   onNavigate?: (page: string) => void;
 }
 
-export function VolunteerPage({ onNavigate }: VolunteerPageProps) {
+export function VolunteerPage({ onNavigate: _ }: VolunteerPageProps) {
   const [selectedOpportunity, setSelectedOpportunity] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',

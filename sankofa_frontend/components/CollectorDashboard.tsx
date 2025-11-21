@@ -30,8 +30,8 @@ interface CollectorDashboardProps {
 
 export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
   const { user } = useAuth();
-  const { data, loading, error } = useCollectorDashboard();
-  const [selectedMonth] = useState('October 2025');
+  const { dashboardData: data, loading, error } = useCollectorDashboard();
+  const [_selectedMonth] = useState('October 2025');
 
   if (loading) {
     return (
@@ -186,7 +186,7 @@ export function CollectorDashboard({ onNavigate }: CollectorDashboardProps) {
                     </Badge>
                   </div>
                   <div className="space-y-3">
-                    {recentCollections.map((collection, index) => (
+                    {recentCollections.map((collection: any, index: number) => (
                       <div
                         key={index}
                         className="flex flex-col sm:flex-row sm:items-center justify-between p-5 bg-stone-50/50 rounded-xl gap-4 hover:bg-stone-50 transition-all border border-transparent hover:border-gray-200"

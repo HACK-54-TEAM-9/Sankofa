@@ -9,7 +9,6 @@ import { AIFloatingButton } from './AIFloatingButton';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { 
   MapPin, 
-  Search, 
   AlertTriangle, 
   TrendingUp, 
   Droplets,
@@ -201,7 +200,7 @@ const testimonials = [
 
 export function LocationInsightsPage({ onNavigate }: LocationInsightsPageProps) {
   const [location, setLocation] = useState('');
-  const [searchedLocation, setSearchedLocation] = useState('');
+  const [, setSearchedLocation] = useState('');
   const [locationData, setLocationData] = useState<LocationData | null>(null);
   const [isSearching, setIsSearching] = useState(false);
   const [isGettingLocation, setIsGettingLocation] = useState(false);

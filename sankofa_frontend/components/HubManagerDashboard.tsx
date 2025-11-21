@@ -1,26 +1,20 @@
-import { useState, useEffect } from "react";
+
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Progress } from "./ui/progress";
 import {
-  Building2,
   Users,
   User,
   Package,
   TrendingUp,
-  MapPin,
-  Activity,
   DollarSign,
-  Calendar,
   BarChart3,
-  AlertTriangle,
   CheckCircle2,
   Clock,
   Sparkles,
   Award,
-  ArrowUpRight,
   ChevronRight,
   Plus,
   Phone,
@@ -36,8 +30,8 @@ interface HubManagerDashboardProps {
 export function HubManagerDashboard({
   onNavigate,
 }: HubManagerDashboardProps) {
-  const { user } = useAuth();
-  const { dashboardData, loading, error } = useHubDashboard();
+  const { user: _ } = useAuth();
+  const { dashboardData, loading, error: _error } = useHubDashboard();
 
   // Merge real data with defaults
   const stats = {
@@ -263,7 +257,7 @@ export function HubManagerDashboard({
 
                 {recentTransactions.length > 0 ? (
                   <div className="space-y-3">
-                    {recentTransactions.map((transaction) => (
+                    {recentTransactions.map((transaction: any) => (
                       <div
                         key={transaction.id}
                         className="flex items-center justify-between p-4 bg-stone-50 hover:bg-stone-100 rounded-xl transition-colors cursor-pointer"

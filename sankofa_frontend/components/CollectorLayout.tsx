@@ -7,13 +7,10 @@ import {
   LayoutDashboard,
   MessageSquare,
   Sparkles,
-  Settings,
   Menu,
   User,
-  Package,
   LogOut,
   ChevronRight,
-  Award,
 } from 'lucide-react';
 import { useAuth } from './AuthContext';
 import MaskGroup from '../imports/MaskGroup';

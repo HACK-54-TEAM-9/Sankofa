@@ -10,7 +10,7 @@ interface CollectorPageProps {
 }
 
 export function CollectorPage({ onNavigate }: CollectorPageProps) {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user: _ } = useAuth();
 
   return (
     <div className="w-full">

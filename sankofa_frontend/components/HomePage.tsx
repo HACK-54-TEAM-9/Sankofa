@@ -1,5 +1,4 @@
-import { CTAButtons } from "./CTAButtons";
-import { ImpactMetric } from "./ImpactMetric";
+
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { AIFloatingButton } from "./AIFloatingButton";
 import { CustomerServiceChatbot } from "./CustomerServiceChatbot";
@@ -12,7 +11,6 @@ import {
   Wind,
   Shield,
   TrendingUp,
-  Users,
   MapPin,
   Sparkles,
   Heart,

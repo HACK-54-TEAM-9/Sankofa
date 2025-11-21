@@ -18,16 +18,12 @@ import {
   Search,
   Scale,
   Wallet,
-  DollarSign,
   Coins,
   CheckCircle2,
   AlertCircle,
   User,
-  MapPin,
   Phone,
   ArrowLeft,
-  Package2,
-  TrendingUp,
   Banknote,
   FileText,
 } from 'lucide-react';
@@ -52,7 +48,7 @@ interface Collector {
 }
 
 export function HubTransactionFlow({ onNavigate }: HubTransactionFlowProps) {
-  const { accessToken, user } = useAuth();
+  const { accessToken, user: _ } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');

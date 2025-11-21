@@ -1,5 +1,4 @@
 import { Card } from './ui/card';
-import { ImpactMetric } from './ImpactMetric';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { 
   Recycle, 
@@ -20,7 +19,7 @@ interface DataInsightsPageProps {
   onNavigate: (page: string) => void;
 }
 
-export function DataInsightsPage({ onNavigate }: DataInsightsPageProps) {
+export function DataInsightsPage({ onNavigate: _ }: DataInsightsPageProps) {
   // Mock data for charts
   const monthlyCollectionData = [
     { month: 'Jun', tons: 180 },
