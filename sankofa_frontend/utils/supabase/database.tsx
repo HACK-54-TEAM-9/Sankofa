@@ -5,6 +5,9 @@ import { supabase } from './client';
  * Use these when backend API is unavailable
  */
 
+// Type helper to work around strict typing
+type DbRow = Record<string, any>;
+
 // Auth operations
 export const supabaseAuth = {
   signUp: async (email: string, password: string, metadata: { name: string; role: string; phone?: string }) => {
@@ -95,7 +98,7 @@ export const supabaseCollectors = {
   }) => {
     const { data, error } = await supabase
       .from('collectors')
-      .insert(collectorData)
+      .insert(collectorData as any)
       .select()
       .single();
     
@@ -130,7 +133,7 @@ export const supabaseCollections = {
   }) => {
     const { data, error } = await supabase
       .from('collections')
-      .insert(collectionData)
+      .insert(collectionData as any)
       .select()
       .single();
     
@@ -174,7 +177,7 @@ export const supabaseCollections = {
     
     const { data, error } = await supabase
       .from('collections')
-      .update(updateData)
+      .update(updateData as any)
       .eq('id', collectionId)
       .select()
       .single();
@@ -269,7 +272,7 @@ export const supabaseMessages = {
   }) => {
     const { data, error } = await supabase
       .from('messages')
-      .insert(messageData)
+      .insert(messageData as any)
       .select()
       .single();
     
@@ -280,7 +283,7 @@ export const supabaseMessages = {
   markAsRead: async (messageId: string) => {
     const { data, error } = await supabase
       .from('messages')
-      .update({ is_read: true, read_at: new Date().toISOString() })
+      .update({ is_read: true, read_at: new Date().toISOString() } as any)
       .eq('id', messageId)
       .select()
       .single();
@@ -302,8 +305,8 @@ export const supabaseDashboard = {
 
     if (collectionsError) throw collectionsError;
 
-    const totalWeight = collections?.reduce((sum, c) => sum + parseFloat(c.weight_kg), 0) || 0;
-    const totalEarnings = collections?.reduce((sum, c) => sum + parseFloat(c.total_value), 0) || 0;
+    const totalWeight = collections?.reduce((sum: number, c: any) => sum + parseFloat(c.weight_kg), 0) || 0;
+    const totalEarnings = collections?.reduce((sum: number, c: any) => sum + parseFloat(c.total_value), 0) || 0;
 
     return {
       totalCollections: collections?.length || 0,
@@ -336,8 +339,8 @@ export const supabaseDashboard = {
       .eq('hub_id', hubId)
       .gte('collected_at', today);
 
-    const todayWeight = todayCollections?.reduce((sum, c) => sum + parseFloat(c.weight_kg), 0) || 0;
-    const todayValue = todayCollections?.reduce((sum, c) => sum + parseFloat(c.total_value), 0) || 0;
+    const todayWeight = todayCollections?.reduce((sum: number, c: any) => sum + parseFloat(c.weight_kg), 0) || 0;
+    const todayValue = todayCollections?.reduce((sum: number, c: any) => sum + parseFloat(c.total_value), 0) || 0;
 
     return {
       activeCollectors: collectorsCount || 0,
